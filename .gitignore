@@ -5,4 +5,4 @@
 /venv
 
 # Allow the log directory
-!logs
+!/logs/*
