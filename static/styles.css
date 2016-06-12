@@ -1,0 +1,141 @@
+html {
+    font-family:sans-serif;
+}
+
+*{
+	margin: 0 auto;
+	padding: 0;
+}
+
+body {
+    #font: 13px/22px Helvetica, Arial, sans-serif;
+    background: #f0f0f0;
+	text-align: center;
+}	
+
+/* Tell the browser to render HTML 5 elements as block */
+header, footer, aside, nav, main, article, figure {
+    display: block;
+}
+
+header{
+	height: 85px;
+	padding: 15px
+}
+
+nav ul li {
+    display: inline-block;
+	letter-spacing: 0.1em;
+    width: auto;
+    font-size: 1.6em;
+    line-height:65px;	
+}
+ 
+nav ul li a {
+    text-decoration: none; 
+	color: #D8D8D8;
+	display: block;
+	padding-left: 1em;
+	padding-right: 1em;
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+ 
+nav ul li a:hover {
+	background-color: #f0f0f0;
+    color: #333333;
+	text-decoration: none;
+}
+ 
+nav ul li.selected a {
+    text-decoration: none;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: 1.6em;
+    font-style: italic;
+    margin:0.67em 0;
+}
+	
+/*a*/.link {
+	text-decoration: underline;
+	color: #000000;
+}
+
+/*a*/.link:hover {
+	text-decoration: none;
+	color: #000000;
+}
+
+/*nav*/.nav{
+    height:65px;
+    background-color:#333333;
+    color: #f0f0f0;
+    margin:0 auto;
+    z-index:1;
+}
+
+.nav-icon {
+    position: absolute;
+    padding: 7px 40px;
+}
+
+/*nav*/.nav ul{
+    list-style: none;
+}
+
+/*nav*/.fixed-header {
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+
+}
+
+.section--anchor {
+    padding-bottom:25px;
+}
+
+/*section*/.section {
+	padding: 60px 30px;
+	max-width: 1024px;
+	min-height: 480px;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+/*section*/.section:first-of-type {
+    padding-top: 0;
+}
+
+/*section*/.nav--buffer {
+    top: 115;
+}
+
+/*section*/.section:nth-of-type(2n) {
+    background-color: #sf7f7f7
+}
+
+.section--inner {
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+.section--inner p {
+    margin:0.67em 0;
+    font-family: Helvetica, sans-serif;
+    font-size: 1.2em;
+}
+
+/*footer*/.footer {
+    text-align: center;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 10px;
+    font-size: 0.75em
+}
