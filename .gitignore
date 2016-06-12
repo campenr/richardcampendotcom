@@ -3,3 +3,6 @@
 
 # venv files
 /venv
+
+# Allow the log directory
+!logs
