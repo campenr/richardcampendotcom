@@ -3,6 +3,3 @@
 
 # venv files
 /venv
-
-# Config files (repo'd seperately)
-/config
