@@ -26,8 +26,8 @@ $(document).ready(function(){
     });
 
     // Reset page with clicking on logo
-    var navLogo = document.getElementById('nav-logo-link');
-    $(navLogo).click(function(event){
+    var logo = document.getElementsByClassName('logo');
+    $(logo).click(function(event){
         event.preventDefault();
         toggleSection(0);
     });

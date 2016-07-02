@@ -8,13 +8,12 @@ html {
 }
 
 body {
-    #font: 11px/20px Helvetica, Arial, sans-serif;
     background: #f0f0f0;
 	text-align: center;
 }	
 
 /* Tell the browser to render HTML 5 elements as block */
-header, footer, aside, nav, main, article, figure {
+header, footer, aside, nav, main, article, figure, section {
     display: block;
 }
 
@@ -23,43 +22,13 @@ header{
 	padding: 15px
 }
 
-nav ul li {
-    display: inline-block;
-	letter-spacing: 0.05em;
-    width: auto;
-    font-size: 1.4em;
-    line-height:55px;
-}
- 
-nav ul li a {
-    text-decoration: none; 
-	color: #D8D8D8;
-	display: block;
-	padding-left: 0.5em;
-	padding-right: 0.5em;
-	-webkit-transition: all 0.4s ease;
-	-moz-transition: all 0.4s ease;
-	-o-transition: all 0.4s ease;
-	transition: all 0.4s ease;
-}
- 
-nav ul li a:hover {
-	background-color: #f0f0f0;
-    color: #333333;
-	text-decoration: none;
-}
- 
-nav ul li.selected a {
-    text-decoration: none;
-}
-
 h1 {
     font-family: Georgia, serif;
     font-size: 1.4em;
     font-style: italic;
     margin:0.67em 0;
 }
-	
+
 /*a*/.link {
 	text-decoration: underline;
 	color: #000000;
@@ -78,11 +47,6 @@ h1 {
     z-index:1;
 }
 
-.nav-icon {
-    position: absolute;
-    padding: 7px 40px;
-}
-
 /*nav*/.nav ul{
     list-style: none;
 }
@@ -94,38 +58,67 @@ h1 {
     width: 100%;
 }
 
-.section--anchor {
-    padding-bottom:25px;
+nav ul li {
+    display: inline-block;
+	letter-spacing: 0.05em;
+    width: auto;
+    font-size: 1.4em;
+    line-height:55px;
+}
+
+nav ul li a {
+    text-decoration: none;
+	color: #D8D8D8;
+	display: block;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+
+nav ul li a:hover {
+	background-color: #f0f0f0;
+    color: #333333;
+	text-decoration: none;
+}
+
+nav ul li.selected a {
+    text-decoration: none;
+}
+
+/*div*/.nav-icon {
+    position: absolute;
+    padding: 7px 40px;
 }
 
 /*main*/.main-content {
+    margin-top: 8%;
     top: 115;
     width: 100%;
     min-height: 75vh;
     padding: 0;
-    justify-content: center;
+
 }
 
 /*section*/.section {
-    visibility: hidden;
-    position: absolute;
-	padding: 70px;
-	width: 100wh;
-	height: 0px;
-    justify-content: center;
+	width: 100%;
+	position: absolute;
+	visibility: hidden;
 }
 
 /*section*/.section--display {
     visibility: visible;
 }
 
-/*section*/.nav--buffer {
-    top: 115;
+/*div*/.section--header {
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 
 /*div*/.section--inner {
-    margin: 0 auto;
-    max-width: 85%;
+    width: 80%;
 }
 
 /*div*/.section--inner p {

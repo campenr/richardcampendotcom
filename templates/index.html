@@ -9,21 +9,21 @@
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="stylesheet" href="static/css/main.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-    <!-- <script>$(window).scroll(function() {if ($(this).scrollTop() > 115){$('nav').addClass("fixed-header");$('section').addClass("nav--buffer");}else{$('nav').removeClass("fixed-header");$('section').removeClass("nav--buffer");}});</script> -->
+    <!-- <script>$(window).scroll(function() {if ($(this).scrollTop() > 115){$('nav').addClass("fixed-header");$('section').addClass("nav--buffer");}else{$('nav').removeClass("fixed-header");$('section').removeClass("nav--buffer");}});</script>
     <script type="text/javascript">if (typeof jQuery != 'undefined'){jQuery(document).ready(function($){var filetypes = /\.(zip|exe|dmg|pdf|doc.*|xls.*|ppt.*|mp3|txt|rar|wma|mov|avi|wmv|flv|wav)$/i;var baseHref = '';if (jQuery('base').attr('href') != undefined) baseHref = jQuery('base').attr('href');jQuery('a').on('click', function(event) {var el = jQuery(this);var track = true;var href = (typeof(el.attr('href')) != 'undefined' ) ? el.attr('href') :"";var isThisDomain = href.match(document.domain.split('.').reverse()[1] + '.' + document.domain.split('.').reverse()[0]);if (!href.match(/^javascript:/i)) {var elEv = []; elEv.value=0, elEv.non_i=false;if (href.match(/^mailto\:/i)) {elEv.category = "email";elEv.action = "click";elEv.label = href.replace(/^mailto\:/i, '');elEv.loc = href;}else if (href.match(filetypes)) {var extension = (/[.]/.exec(href)) ? /[^.]+$/.exec(href) : undefined;elEv.category = "download";elEv.action = "click-" + extension[0];elEv.label = href.replace(/ /g,"-");elEv.loc = baseHref + href;}else if (href.match(/^https?\:/i) && !isThisDomain) {elEv.category = "external";elEv.action = "click";elEv.label = href.replace(/^https?\:\/\//i, '');elEv.non_i = true;elEv.loc = href;}else if (href.match(/^tel\:/i)) {elEv.category = "telephone";elEv.action = "click";elEv.label = href.replace(/^tel\:/i, '');elEv.loc = href;}else track = false;if (track) {_gaq.push(['_trackEvent', elEv.category.toLowerCase(), elEv.action.toLowerCase(), elEv.label.toLowerCase(), elEv.value, elEv.non_i]);if ( el.attr('target') == undefined || el.attr('target').toLowerCase() != '_blank') {setTimeout(function() { location.href = elEv.loc; }, 400);return false;}}}});});}</script>
     <script type="text/javascript">var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-67087023-1']);_gaq.push(['_trackPageview']);(function(){var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>
+     -->
 </head>
 
 
 <body>
 	<header>
-		<img src="static/images/DNA-brackets-full-name-logo.png" alt="Richard Campen" width="445px" height="85px" align="center">
+		 <a href="" class="logo"><img src="static/images/DNA-brackets-full-name-logo.png" alt="Richard Campen" width="445px" height="85px" align="center"></a>
 	</header>
 
 	<nav class="nav">
         <div class="nav-icon">
-            <a href="" id="nav-logo-link"><img src="static/images/DNA-brackets-nav-52px.png" alt="home" width="44px" height="44px"></a>
+            <a href="" class="logo"><img src="static/images/DNA-brackets-nav-52px.png" alt="home" width="44px" height="44px"></a>
         </div>
 		<ul>
 			<li><a href="" class="nav-link" id="nav-link-1">publications</a></li>
@@ -33,11 +33,13 @@
 
 
 	<main class="main-content">
+
         <section class="section" id="section-0">
             <div class="section--inner">
-			    <h1>About</h1>
-                <br>
-			    <p>
+                <div class="section--header">
+			        <h1>About</h1>
+                </div>
+                <p>
                     My name is Richard Campen, I have a PhD in Molecular Microbiology,
 				    and an interest in coding and bioinformatics. This website is a
 				    central repository of content I have created or contributed to.
@@ -48,12 +50,13 @@
                     <a target= "_blank" href="https://github.com/campenr"><img src="static/images/GitHub-Mark-32px.png" width="32px"></a>
                 </p>
             </div>
-        </section>
+		</section>
 
         <section class="section" id="section-1">
             <div class="section--inner">
-			    <h1>Publications</h1>
-                <br>
+                <div class="section--header">
+			        <h1>Publications</h1>
+                </div>
                 <p>
                     <b>Campen, R. L.</b> (2015).
                     Investigating the mode of action of tuberculosis drugs using hypersensitive mutants of Mycobacterium smegmatis.
@@ -71,13 +74,14 @@
                     <a class="link" target= "_blank" href="http://www.sciencedirect.com/science/article/pii/S1472979215207494">sciencedirect.com</a>
                 </p>
             </div>
-        </section>
+		</section>
 
         <section class="section" id="section-2">
             <div class="section--inner">
-			    <h1>Software</h1>
-                <br>
-			    <p>
+                <div class="section--header">
+			        <h1>Software</h1>
+                </div>
+                <p>
                     <b>dirbrowser</b> - a python 3 module that enables basic directory browsing functionality in a command line environment.
                     <br />
                     <i>Latest release (1.0b2)</i> -
@@ -102,7 +106,6 @@
         <script>var year = new Date().getFullYear();var timer = document.createElement('div');timer.innerHTML = 'Copyright &#169; ' + year;document.getElementById('copyright').appendChild(timer);</script>
     </footer>
 
-    <!-- Angular Scripts -->
     <script src="static/js/main.js"></script>
 
 </body>
