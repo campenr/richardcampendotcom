@@ -1,11 +1,10 @@
-{% extends "campen.co_templateBase/campen.co_templateBase.html" %}
+{% extends "base.html" %}
 
-{% block head %}
-    {# Insert page specific head here. #}
-
+{% block header_content %}
+    {# Page specific header content goes here. #}
 {% endblock %}
 
-{% block content %}
+{% block main_content %}
     {# Insert page specific body here. #}
 
     <section class="section" id="section-0">
@@ -20,8 +19,8 @@
             </p>
             <br>
             <p>
-                <a target= "_blank" href="https://nz.linkedin.com/pub/richard-campen/a8/846/b5b"><img src="static/images/In-Black-34px-R.png" width="40px"></a>
-                <a target= "_blank" href="https://github.com/campenr"><img src="static/images/GitHub-Mark-32px.png" width="32px"></a>
+                <a target= "_blank" href="https://nz.linkedin.com/pub/richard-campen/a8/846/b5b"><img src="https://static.campen.co/images/In-Black-34px-R.png" width="40px"></a>
+                <a target= "_blank" href="https://github.com/campenr"><img src="https://static.campen.co/images/GitHub-Mark-32px.png" width="32px"></a>
             </p>
         </div>
     </section>
@@ -78,5 +77,8 @@
             </p>
         </div>
     </section>
+
+    {# Page specific script loadings. #}
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 
 {% endblock %}

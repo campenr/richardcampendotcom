@@ -1,0 +1,21 @@
+{% extends "campen.co_templateBase/campen.co_templateBase.html" %}
+
+{% block header_wrapper %}
+    {# Site/App specific header content goes here. #}
+    {% block header_content %}
+        {# Page specific header content goes here. #}
+    {% endblock %}
+{% endblock %}
+
+{% block main_content_wrapper %}
+    {# Site/App specific main content goes here. #}
+    {% block main_content %}
+        {# page specific main content goes here. #}
+    {% endblock %}
+{% endblock %}
+
+
+{% block version %}
+    {# Site/App version number #}
+    v1.0.0
+{% endblock %}
