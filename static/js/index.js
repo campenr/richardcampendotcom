@@ -1,43 +1,68 @@
 $(document).ready(function(){
 
-    /* --- Toggling between views --- */
+    /* --- Toggle between different sections while giving the appearance
+            of normal website navigation. --- */
 
-    // Pre hide all sections
-    $('section').hide();
+    // Change header to a nav-link to override default behaviour
+    var headerLink = document.getElementsByClassName('header-logo');
+    $(headerLink).addClass('nav-link');
+    $(headerLink).attr('id', 'nav-link-0');
 
-    function displaySection(newSectionDisplay){
+    // Pre-hide all sections
+    $('.section-toggleable').hide();
+
+    function displaySection(n){
         // Toggle section display based on sectionDisplay value
-        var sectionId = 'section-' + newSectionDisplay;
-        var section = document.getElementById(sectionId);
+        var sectionNumber = 'section-' + n;
+        var section = document.getElementsByClassName(sectionNumber);
         $(section).addClass('section--display')
         $(section).show();
     }
 
-    // Display default section information on page load
-    displaySection(0);
+    // Display correct information on page load
+    var path = window.location.pathname;
+    switch(path) {
+        case('/'):
+            displaySection(0)
+            break
+        case('/publications'):
+            displaySection(1);
+            break
+        case('/software'):
+            displaySection(2);
+            break
+    }
 
     // Function to toggle visibleSection
-    function toggleSection(newSectionToggle){
+    function toggleSection(n){
         var visibleSection = document.getElementsByClassName('section--display');
         $(visibleSection).hide();
         $(visibleSection).removeClass('section--display');
-        displaySection(newSectionToggle);
+        displaySection(n);
     }
 
-    // Override nav links with js toggling of CSS visibility
+    // Amend URL history
+    function setUrl(sectionId) {
+        history.pushState('', '', sectionId);
+    }
+
+    // Change content and URL path on link clicks.
     var navLinks = document.getElementsByClassName('nav-link');
     $(navLinks).click(function(event){
         event.preventDefault();
         var linkId = $(this).attr('id').slice(-1);
+        switch(linkId) {
+            case('0'):
+                setUrl('/');
+                break
+            case('1'):
+                setUrl('publications');
+                break
+            case('2'):
+                setUrl('software');
+                break
+        }
         toggleSection(linkId);
     });
 
-    // Reset page with clicking on logo
-    var logo = document.getElementsByClassName('logo');
-    $(logo).click(function(event){
-        event.preventDefault();
-        toggleSection(0);
-    });
-
-});
-
+});     // end document.ready()

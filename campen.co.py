@@ -1,8 +1,11 @@
 from flask import Flask, render_template
 application = Flask(__name__)
 
-@application.route("/")
-@application.route("/index")
+
+@application.route('/')
+@application.route('/index')
+@application.route('/publications')
+@application.route('/software')
 def homepage():
     return render_template("index.html")
 
