@@ -3,19 +3,19 @@ $(document).ready(function(){
     /* --- Toggle between different sections while giving the appearance
             of normal website navigation. --- */
 
+    // Pre-hide all sections
+    $('.section-toggleable').hide();
+
     // Change header to a nav-link to override default behaviour
     var headerLink = document.getElementsByClassName('header-logo');
     $(headerLink).addClass('nav-link');
     $(headerLink).attr('id', 'nav-link-0');
 
-    // Pre-hide all sections
-    $('.section-toggleable').hide();
-
     function displaySection(n){
         // Toggle section display based on sectionDisplay value
         var sectionNumber = 'section-' + n;
         var section = document.getElementsByClassName(sectionNumber);
-        $(section).addClass('section--display')
+        $(section).addClass('section-display')
         $(section).show();
     }
 
@@ -35,9 +35,9 @@ $(document).ready(function(){
 
     // Function to toggle visibleSection
     function toggleSection(n){
-        var visibleSection = document.getElementsByClassName('section--display');
+        var visibleSection = document.getElementsByClassName('section-display');
         $(visibleSection).hide();
-        $(visibleSection).removeClass('section--display');
+        $(visibleSection).removeClass('section-display');
         displaySection(n);
     }
 
