@@ -1,21 +1,64 @@
-{% extends "campen.co_templateBase/campen.co_templateBase.html" %}
+<!DOCTYPE html>
+<html lang="en" >
 
-{% block header_wrapper %}
-    {# Site/App specific header content goes here. #}
-    {% block header_content %}
-        {# Page specific header content goes here. #}
+<head>
+    <meta charset="UTF-8" />
+
+    <title>campen.co</title>
+
+    <link rel="shortcut icon" href="https://static.campen.co/favicons/campen.co_favicon.ico" />
+    <link rel="stylesheet" href="https://static.campen.co/css/main.css" />
+
+    {# Load jQuery. Would be nice to do this later..? #}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    {% block head %}
+        {# Site/App specific head_content goes here. #}
     {% endblock %}
-{% endblock %}
 
-{% block main_content_wrapper %}
-    {# Site/App specific main content goes here. #}
-    {% block main_content %}
-        {# page specific main content goes here. #}
-    {% endblock %}
-{% endblock %}
+</head>
+
+<body>
+     <div class="main-wrapper">
+        <header>
+             <a href="/" class="header-logo"><img src="https://static.campen.co/images/DNA-brackets-full-name-logo.png" alt="Richard Campen" width="445px" height="85px" align="center"></a>
+        </header>
+
+        <div class="nav-wrapper">
+            <div class="nav-anchor"></div>
+            <div class="nav-buffer"></div>
+            <nav class="nav">
+                {# make this nav icon only appear when header is out of view i.e. when nav in sticky mode #}
+                <div class="nav-icon">
+                    <a href="#" class="nav-logo logo"><img src="https://static.campen.co/images/DNA-brackets-nav-52px.png" alt="home" width="44px" height="44px"></a>
+                </div>
+                <ul>
+                    <li><a href="/publications" class="nav-link">publications</a></li>
+                    <li><a href="/software" class="nav-link">software</a></li>
+                    <li><a href="/projects" class="nav-link">projects</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="main-content-wrapper">
+            {% block main_content %}
+                {# Site/App specific main content goes here. #}
+            {% endblock %}
+        </div>
+    </div>
 
 
-{% block version %}
-    {# Site/App version number #}
-    v1.0.0
-{% endblock %}
+    <div class="footer-wrapper">
+        <div class="footer-content">
+            <p class="version">v1.1.0</p>
+            <div id='copyright'>
+                Copyright &#169 <span class="copyright-year"></span> <a href="https://campen.co">Richard Campen</a>
+            </div>
+        </div>
+    </div>
+
+    {# Multisite wide script loadings. #}
+    <script src="https://static.campen.co/js/main.js"></script>
+    <script type="text/javascript">var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-67087023-1']);_gaq.push(['_trackPageview']);(function(){var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>
+</body>
+</html>
