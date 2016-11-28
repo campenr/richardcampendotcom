@@ -5,11 +5,20 @@ application = Flask(__name__)
 
 @application.route('/')
 @application.route('/index')
-@application.route('/publications')
-@application.route('/software')
 def index():
-
     return render_template("index.html")
+
+@application.route('/publications')
+def publications():
+    return render_template('/publications.html')
+
+@application.route('/software')
+def software():
+    return render_template('/software.html')
+
+@application.route('/projects')
+def projects():
+    return render_template('/projects.html')
 
 @application.errorhandler(404)
 def page_not_found(e):
