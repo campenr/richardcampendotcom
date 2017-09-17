@@ -18,7 +18,7 @@
 
 </head>
 
-<body style="background-color: #fafafa;">
+<body class="main-wrapper" style="background-color: #fafafa;">
 
     <div class="container" style="text-align: center;">
         <a href="/">
@@ -50,23 +50,21 @@
         </div>
     </nav>
 
-    <div class="container" style="text-align: center;">
+    <div class="container main-content" style="text-align: center;">
         {% block main_content %}
             {# page specific main content fills in here. #}
         {% endblock %}
     </div>
 
-    <div class="footer">
-        <div class="footer-content">
-            <p class="version">v1.1.0</p>
-            <div id='copyright'>
-                Copyright &#169 <span class="copyright-year"></span> <a href="https://campen.co">Richard Campen</a>
-            </div>
-        </div>
+    <div class="footer pb-1 pt-3 text-center">
+        <p id='copyright'>
+            <small>
+                Copyright &#169 2017 <a href="https://campen.co">Richard Campen</a>
+            </small>
+        </p>
     </div>
 
     {# Multisite wide script loadings. #}
-{#    <script src="{{ url_for('static', filename='js/main.js') }}"></script>#}
     <script type="text/javascript">var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-67087023-1']);_gaq.push(['_trackPageview']);(function(){var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>
 
     {# load js #}
