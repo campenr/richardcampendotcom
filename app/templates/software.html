@@ -5,36 +5,42 @@
 {% endblock %}
 
 {% block main_content %}
+    {# NOTE: This content is wrapped in a bootstrap container #}
     {# Insert page specific body here. #}
 
-    <section class="section">
-        <div class="section-inner">
-            <div class="section-header">
-                <h1>Software</h1>
-            </div>
-            <p>
-                <b>LinkShortener</b> - A Flask based web application for creating/managing short links for for URLs.
-                <br />
-                <i>Latest release (1.0.0)</i> -
-                <a class="link" target= "_blank" href="https://github.com/campenr/LinkShortener">github</a>
-            </p>
-            <br />
-            <p>
-                <b>dirbrowser</b> - a python 3 module that enables basic directory browsing functionality in a command line environment.
-                <br />
-                <i>Latest release (1.0b2)</i> -
-                <a class="link" target= "_blank" href="/static/files/dirbrowser-1.0b2.zip" download="dirbrowser-1.0b2.zip">src</a>
-            </p>
-            <br />
-            <p>
-                <b>multiplate</b> - a python 3 package for processing data from multiplate readers.
-                <br />
-                <i>Latest release (0.1a2)</i> -
-                <a class="link" target= "_blank" href="/static/files/multiplate-0.1a2.zip" download="multiplate-0.1a1.zip">src</a>
-                <a class="link" target= "_blank" href="/static/files/multiplate-0.1a2-py3-none-any.whl" download="multiplate-0.1a2-py3-none-any.whl">whl</a>
-            </p>
-        </div>
-    </section>
+    <div class="pt-3 pb-1">
+        <h3 class="pt-2">Software</h3>
+    </div>
+
+    <p class="pt-3 pb-2 px-3">
+        <b>LinkShortener</b> - A Flask based web application for creating/managing short links for for URLs.
+        <br />
+        <i>Latest release (0.4.0)</i> -
+        <span class="text-nowrap">[
+            <a class="link" target= "_blank" href="https://github.com/campenr/LinkShortener">github</a>
+        ]</span>
+    </p>
+
+    <p class="pt-3 pb-2 px-3">
+        <b>dirbrowser</b> - a python 3 module that enables basic directory browsing functionality in a command line environment.
+        <br />
+        <i>Latest release (1.0b2)</i> -
+        <span class="text-nowrap">[
+            <a class="link" target= "_blank" href="/static/files/dirbrowser-1.0b2.zip" download="dirbrowser-1.0b2.zip">src</a>
+        ]</span>
+    </p>
+
+    <p class="pt-3 pb-2 px-3">
+        <b>multiplate</b> - a python 3 package for processing data from multiplate readers.
+        <br />
+        <i>Latest release (0.1a2)</i> -
+        <span class="text-nowrap">[
+            <a class="link" target= "_blank" href="/static/files/multiplate-0.1a2.zip" download="multiplate-0.1a1.zip">src</a>
+        ]</span>
+        <span class="text-nowrap">[
+            <a class="link" target= "_blank" href="/static/files/multiplate-0.1a2-py3-none-any.whl" download="multiplate-0.1a2-py3-none-any.whl">whl</a>
+        ]</span>
+    </p>
 
     {# Page specific script loadings. #}
 
