@@ -1,8 +1,12 @@
 # Project dev files
 .idea
 
+# python C files
+*.pyc
+
 # venv files
 /venv
+/venvb
 
 # Allow the log directory
 !/logs/*
