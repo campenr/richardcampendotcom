@@ -3,7 +3,4 @@
 # This software is released under the Modified BSD license
 # See LICENSE.txt for the full license documentation
 
-from app import flask_app
-
-if __name__ == '__main__':
-    flask_app.run(debug=True)
+from app import celery_app
