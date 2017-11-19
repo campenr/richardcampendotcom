@@ -27,3 +27,5 @@ def make_celery(app):
     return celery_
 
 celery_app = make_celery(flask_app)
+
+from app import views
