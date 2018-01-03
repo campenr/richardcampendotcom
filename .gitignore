@@ -8,5 +8,11 @@
 /venv
 /venvb
 
+# db things
+/migrations
+
+# other things
+*/pychache*
+
 # Allow the log directory
 !/logs/*

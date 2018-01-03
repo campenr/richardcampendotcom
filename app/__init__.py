@@ -55,5 +55,6 @@ flask_app.software_trackers = {
 }
 
 print('-Starting periodic background tasks')
+# TODO actually make periodic using a scheduler
 refresh_versions = tasks.refresh_software_versions.apply_async(countdown=60)
 

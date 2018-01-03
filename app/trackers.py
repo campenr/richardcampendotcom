@@ -7,6 +7,7 @@ from app import db
 from app.models import Software
 import requests
 
+
 class SoftwareTracker(object):
 
     def __init__(self, name):
@@ -21,13 +22,15 @@ class SoftwareTracker(object):
 
     def update_version(self):
 
-        # get version using Tracker specific parser
         try:
+            # get version using Tracker specific parser
             version = self.parse_version()
+
             # update database record
             software = Software.query.filter_by(name=self.name).first()
             software.version = version
             db.session.commit()
+
         except Exception as e:
             print('Got the following exception when fetching version number for {name}:\n'
                   '[START]{e}[END]'.format(name=self.name, e=e))
