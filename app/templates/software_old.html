@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {# Page specific header content goes here. #}
+{% endblock %}
+
+{% block main_content %}
+    {# NOTE: This content is wrapped in a bootstrap container #}
+    {# Insert page specific body here. #}
+
+    <div class="pt-3 pb-1">
+        <h3 class="pt-2">Websites / Web Apps</h3>
+    </div>
+
+    {# TODO: change styling of links #}
+
+    <p class="pt-3 pb-2 px-3">
+        <a target="_blank" href="https://campen.co">
+            <b>campen.co</b>
+        </a>
+        - My personal website (the one you're on now!) run on Python 3, the Flask microframework, and Bootstrap 4 Beta.
+        <span class="text-nowrap">[
+            <a class="link" target= "_blank" href="https://github.com/campenr/campen.co">GitHub</a>
+        ]</span>
+    </p>
+
+    <p class="pt-3 pb-2 px-3">
+        <a target="_blank" href="https://scribble.tips">
+            <b>scribble.tips</b>
+        </a>
+        - A Python 3 / Flask microframework based web application where Twitch.tv streamers can track follow,
+        subscription, and donation events and reward users with a blank canvas to create a drawing on. Has optional
+        Google Cloud Print integration for printing a physical copy on a printer the streamer specifies.
+        <br />
+        Powered by the Flask web microframework, Twitch.tv OAuth2 for user
+        management, StreamLabs OAuth2 for donation tracking, Google OAuth2 for Google Cloud Print integration,
+        PostgreSQL for data storage, and Bootstrap 3.
+        <br />
+        <i>Latest release (0.3.2)</i> -
+        <span class="text-nowrap">[
+            <a class="link" target="_blank" href="https://github.com/campenr/scribble.tips">GitHub</a>
+        ]</span>
+    </p>
+
+    <p class="pt-3 pb-2 px-3">
+        <a target="_blank" href="https://links.campen.co">
+            <b>links.campen.co</b>
+        </a>
+        - A Python 3 / Flask microframework based web application for creating/managing short URLs. Uses
+        <span class="text-nowrap">Bootstrap 3</span> for mobile responsiveness, Google OAuth2
+        for sign in, PostgreSQL for data storage, and jQuery Datatables.
+        <br />
+        <i>Latest release (0.4.0)</i> -
+        <span class="text-nowrap">[
+            <a class="link" target= "_blank" href="https://github.com/campenr/links.campen.co">GitHub</a>
+        ]</span>
+    </p>
+
+    {# ----------------------------------------------------------- #}
+
+    <div class="pt-3 pb-1">
+        <h3 class="pt-2">Python Packages</h3>
+    </div>
+
+    <p class="pt-3 pb-2 px-3">
+        <b>mothur-py</b> - a python wrapper for the command line bioinformatics tool mothur.
+        <br />
+        <i>Latest release (v0.2.5)</i> -
+        <span class="text-nowrap">[
+            <a class="link" target= "_blank" href="https://pypi.python.org/pypi/mothur-py">PyPI</a>
+        ]</span>
+        <span class="text-nowrap">[
+            <a class="link" target= "_blank" href="https://github.com/campenr/mothur-py">GitHub</a>
+        ]</span>
+    </p>
+
+    <p class="pt-3 pb-2 px-3">
+        <b>dirbrowser</b> - a python 3 module that enables basic directory browsing functionality in a command line environment.
+        <br />
+        <i>Latest release (1.0b2)</i> -
+        <span class="text-nowrap">[
+            <a class="link" target= "_blank" href="https://github.com/campenr/dirbrowser">GitHub</a>
+        ]</span>
+    </p>
+
+    <p class="pt-3 pb-2 px-3">
+        <b>multiplate</b> - a python 3 package for processing data from multiplate readers.
+        <br />
+        <i>Latest release (0.1a2)</i> -
+        <span class="text-nowrap">[
+            <a class="link" target= "_blank" href="https://github.com/campenr/multiplate">GitHub</a>
+        ]</span>
+    </p>
+
+    {# Page specific script loadings. #}
+
+
+{% endblock %}
