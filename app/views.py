@@ -5,23 +5,26 @@
 
 from flask import render_template
 from app import flask_app
+from app.models import Software
 
 
 @flask_app.route('/')
 @flask_app.route('/index')
 def index():
-
     return render_template("index.html")
+
+
+@flask_app.route('/software')
+def software():
+
+    software_versions = {software_.name: software_.version for software_ in Software.query.all()}
+
+    return render_template('software.html', software_versions=software_versions)
 
 
 @flask_app.route('/publications')
 def publications():
     return render_template('publications.html')
-
-
-@flask_app.route('/software')
-def software():
-    return render_template('software.html')
 
 
 @flask_app.route('/projects')

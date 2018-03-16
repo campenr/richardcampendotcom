@@ -24,37 +24,15 @@ flask_app.config.from_object(config[config_name])
 # db setup
 db = SQLAlchemy(flask_app)
 
-# celery setup
-def make_celery(app):
-    celery_ = Celery(app.import_name, backend=app.config['CELERY_RESULT_BACKEND'],
-                     broker=app.config['CELERY_BROKER_URL'])
-    celery_.conf.update(app.config)
-    TaskBase = celery_.Task
-
-    class ContextTask(TaskBase):
-        abstract = True
-
-        def __call__(self, *args, **kwargs):
-            with app.app_context():
-                return TaskBase.__call__(self, *args, **kwargs)
-
-    celery_.Task = ContextTask
-    return celery_
-
-
-print('-Configuring celery')
-celery_app = make_celery(flask_app)
-
-
-print('-Importing views, models, tasks, trackers')
-from app import views, models, tasks, trackers
+print('-Importing views and models')
+from app import views, models
 
 print('-Configuring trackers')
+from app import trackers
 flask_app.software_trackers = {
     'pypi': trackers.PYPITracker
 }
 
-print('-Starting periodic background tasks')
-# TODO actually make periodic using a scheduler
-refresh_versions = tasks.refresh_software_versions.apply_async(countdown=60)
-
+print('-Configuring tasks and queuing periodic tasks')
+from app.celery_app import celery_app
+from app import tasks
