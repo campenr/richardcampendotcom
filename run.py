@@ -3,7 +3,7 @@
 # This software is released under the Modified BSD license
 # See LICENSE.txt for the full license documentation
 
-from app import app
+from app import flask_app
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    flask_app.run(debug=True, port=5001)

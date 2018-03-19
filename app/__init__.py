@@ -3,35 +3,52 @@
 # This software is released under the Modified BSD license
 # See LICENSE.txt for the full license documentation
 
-from flask import Flask, render_template
+from flask import Flask
+from celery import Celery
+from flask_sqlalchemy import SQLAlchemy
+import os
 
-app = Flask(__name__)
+from config import config
 
+flask_app = Flask(__name__)
 
-@app.route('/')
-@app.route('/index')
-def index():
-    return render_template("index.html")
+# load correct config settings based on environment variable, or default to 'development' environment
+config_name = os.environ.get('CONFIG_ENV')
+if config_name is None:
+    print('-Loading configuration: No environment specified, defaulting to development environment')
+    config_name = 'development'
+else:
+    print('-Loading configuration: ', config_name)
+flask_app.config.from_object(config[config_name])
 
+# db setup
+db = SQLAlchemy(flask_app)
 
-@app.route('/publications')
-def publications():
-    return render_template('publications.html')
+print('-Configuring celery')
+def make_celery(app):
+    celery_ = Celery(app.import_name, backend=app.config['CELERY_RESULT_BACKEND'],
+                     broker=app.config['CELERY_BROKER_URL'])
+    celery_.conf.update(app.config)
+    TaskBase = celery_.Task
 
+    class ContextTask(TaskBase):
+        abstract = True
 
-@app.route('/software')
-def software():
-    return render_template('software.html')
+        def __call__(self, *args, **kwargs):
+            with app.app_context():
+                return TaskBase.__call__(self, *args, **kwargs)
 
+    celery_.Task = ContextTask
 
-@app.route('/projects')
-def projects():
-    return render_template('projects.html')
+    return celery_
 
+celery_app = make_celery(flask_app)
 
-@app.errorhandler(404)
-def page_not_found(e):
-    return render_template('404.html'), 404
+print('-Importing views, models, and tasks')
+from app import views, models, tasks
 
-if __name__ == "__main__":
-    app.run()
+print('-Configuring trackers')
+from app import trackers
+flask_app.software_trackers = {
+    'pypi': trackers.PYPITracker
+}
