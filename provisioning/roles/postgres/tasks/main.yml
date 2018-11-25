@@ -1,0 +1,30 @@
+---
+- import_tasks: server-install.yml
+  tags:
+    - server-install
+    - postgres
+    - postgres.server-install
+
+- import_tasks: server-initialize.yml
+  tags:
+    - server-install
+    - server-configure
+    - app-install
+    - postgres
+    - postgres.server-install
+    - postgres.server-configure
+    - postgres.app-install
+
+- import_tasks: server-configure.yml
+  tags:
+    - server-configure
+    - postgres
+    - postgres.server-configure
+
+- import_tasks: app-install.yml
+  become: yes
+  become_user: postgres
+  tags:
+    - app-install
+    - postgres
+    - postgres.app-install

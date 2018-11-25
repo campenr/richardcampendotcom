@@ -1,0 +1,3 @@
+[submodule "provisioning/roles/ubuntu"]
+	path = provisioning/roles/ubuntu
+	url = git@github.com:campenr/ansible-role-ubuntu.git

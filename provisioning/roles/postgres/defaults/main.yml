@@ -1,0 +1,10 @@
+---
+
+## Postgres DBs
+# expects a list of dictionaries:
+# postgres_dbs:
+#   - name: <database_name>
+#     user: <user_name>
+#     password: <user_password>
+
+postgres_dbs: []

@@ -1,0 +1,6 @@
+---
+- name: Install python requirements
+  pip:
+    requirements: "{{ item.requirements_file }}"
+    virtualenv: "{{ item.path }}"
+  with_items: "{{ virtual_environments }}"

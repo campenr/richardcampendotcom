@@ -4,15 +4,24 @@
 # python C files
 *.pyc
 
+# log files
+*.log
+
 # venv files
 /venv
 /venvb
 
-# db things
-/migrations
+# node things
+*node_modules/
+
+# vagrant things
+.vagrant/
+
+# secrets
+*config/
 
 # other things
-*/pychache*
+*/pycache*
 
 # Allow the log directory
 !/logs/*

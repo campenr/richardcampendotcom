@@ -1,0 +1,6 @@
+---
+- import_tasks: app-install.yml
+  tags:
+    - app-install
+    - security
+    - security.app-install

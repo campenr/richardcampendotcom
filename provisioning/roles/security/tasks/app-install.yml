@@ -1,0 +1,9 @@
+---
+- name: Create Unix users
+  user:
+    name: "{{ item.name }}"
+    password: "{{ item.password }}"
+    groups: "{{ item.groups | default('') }}"
+    shell: "{{ item.shell | default('/bin/bash') }}"
+    state: present
+  with_items: "{{ security_unix_users }}"

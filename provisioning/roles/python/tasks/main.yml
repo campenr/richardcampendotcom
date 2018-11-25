@@ -1,0 +1,20 @@
+---
+- import_tasks: server-install.yml
+  tags:
+    - server-install
+    - python
+    - python.server-install
+
+- import_tasks: app-install.yml
+  tags:
+    - app-install.yml
+    - python
+    - python.app-install
+
+- import_tasks: app-configure.yml
+  remote_user: "{{ app_user_name }}"
+  become: no
+  tags:
+    - app-configure.yml
+    - python
+    - python.app-configure

@@ -1,0 +1,12 @@
+---
+- name: Migrate Django databases
+  django_manage:
+    command: migrate
+    app_path: "{{ item.0.path }}"
+    virtualenv: "{{ item.0.virtualenv }}"
+    settings: "{{ item.0.settings }}"
+    database: "{{ item.1 }}"
+  remote_user: "{{ item.0.user }}"
+  with_subelements:
+    - "{{ django_apps }}"
+    - databases

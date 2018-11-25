@@ -1,0 +1,26 @@
+---
+- name: Create Postgres Databases
+  postgresql_db:
+    name: "{{ item.name }}"
+    encoding: "UTF-8"
+    state: present
+  with_items: "{{ postgres_dbs }}"
+  no_log: true
+
+- name: Create Postgres Users
+  postgresql_user:
+    db: "{{ item.name }}"
+    name: "{{ item.user }}"
+    password: "{{ item.password }}"
+    role_attr_flags: LOGIN
+    encrypted: yes
+    state: present
+  with_items: "{{ postgres_dbs }}"
+  no_log: true
+
+- name: Set PostgreSQL database ownership
+  postgresql_db:
+    name: "{{ item.name }}"
+    owner: "{{ item.user }}"
+  with_items: "{{ postgres_dbs }}"
+  no_log: true

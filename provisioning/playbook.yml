@@ -1,0 +1,11 @@
+---
+- hosts: development
+  become: yes
+  become_method: sudo
+  roles:
+    - ubuntu
+    - security
+    - python
+    - postgres
+    - django
+    - wagtail

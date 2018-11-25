@@ -1,0 +1,11 @@
+---
+
+## Unix users
+# expects a list of dictionaries:
+# security_unix_users:
+#   - name: <user_name>
+#     password: <user_password_hash>
+#     groups: <additional_user_groups> (optional)
+#     shell: <user_shell> (optional)
+
+security_unix_users: []

@@ -1,0 +1,12 @@
+---
+- import_tasks: app-install.yml
+  tags:
+    - app-install
+    - django
+    - django.app-install
+
+- import_tasks: app-configure.yml
+  tags:
+    - app-configure
+    - django
+    - django.app-configure

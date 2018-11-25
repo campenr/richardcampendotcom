@@ -1,0 +1,27 @@
+---
+- name: Ensure app folder exists
+  file:
+    path: "{{ item.path }}"
+    owner: "{{ item.user }}"
+    group: "{{ item.user }}"
+    recurse: yes
+    state: directory
+  with_items: "{{ django_apps }}"
+
+- name: Ensure media folder exists
+  file:
+    path: "{{ item.path }}/media"
+    owner: "{{ item.user }}"
+    group: www-data
+    recurse: yes
+    state: directory
+  with_items: "{{ django_apps }}"
+
+- name: Ensure static folder exists
+  file:
+    path: "{{ item.path }}/static"
+    owner: "{{ item.user }}"
+    group: www-data
+    recurse: yes
+    state: directory
+  with_items: "{{ django_apps }}"

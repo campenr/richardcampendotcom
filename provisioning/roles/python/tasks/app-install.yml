@@ -1,0 +1,6 @@
+---
+- name: Create Virtual Environment
+  command: "virtualenv {{ item.path }} -p {{ item.python_version }}"
+  with_items: "{{ virtual_environments }}"
+  remote_user: "{{ item.user }}"
+  become: no

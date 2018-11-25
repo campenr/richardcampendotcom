@@ -1,0 +1,25 @@
+---
+- name: Update APT cache
+  apt:
+    update_cache: yes
+    cache_valid_time: 86400
+
+- name: Install PostgreSQL
+  apt:
+    name: postgresql
+    state: present
+
+- name: Install libpq-dev package
+  apt:
+    name: libpq-dev
+    state: present
+
+- name: Install postgresql-contrib package
+  apt:
+    name: postgresql-contrib
+    state: present
+
+- name: Install python3-psycopg2 package
+  apt:
+    name: python3-psycopg2
+    state: present
