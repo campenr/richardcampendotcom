@@ -52,3 +52,5 @@ from app import trackers
 flask_app.software_trackers = {
     'pypi': trackers.PYPITracker
 }
+
+print('-Init complete')
