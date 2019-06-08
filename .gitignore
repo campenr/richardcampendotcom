@@ -2,6 +2,9 @@
 .idea
 .vagrant
 
+# secrets
+ansible/vault_passwords/*
+
 # python C files
 *.pyc
 
@@ -17,3 +20,6 @@
 
 # Allow the log directory
 !/logs/*
+
+# keep these!
+!.keep
