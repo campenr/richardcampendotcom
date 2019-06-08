@@ -8,7 +8,7 @@ jobs:
         - feature/ci
     steps:
       - checkout
-      - ls -l .
+      - run: ls -l .
 #      - deploy:
 #          name: deploy
 #          command: |
