@@ -8,10 +8,4 @@ jobs:
         - feature/ci
     steps:
       - checkout
-      - run: |
-          mkdir /var/test/
-          touch /var/test/tmp.txt
-#      - deploy:
-#          name: deploy
-#          command: |
-#            rsync -ave ssh
+      - run: touch ./test.txt
