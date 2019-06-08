@@ -1,5 +1,4 @@
 ---
-app_name: wagtailsite
 app_user_name: vagrant
 app_base: "/home/{{ app_user_name }}"
 app_root: "{{ app_base }}/{{ app_name }}"

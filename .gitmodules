@@ -1,3 +1,6 @@
 [submodule "ansible/roles/ubuntu"]
 	path = ansible/roles/ubuntu
 	url = git@github.com:campenr/ansible-role-ubuntu.git
+[submodule "ansible/roles/security"]
+	path = ansible/roles/security
+	url = git@github.com:campenr/ansible-role-security.git
