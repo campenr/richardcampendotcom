@@ -9,3 +9,7 @@ jobs:
     steps:
       - checkout
       - run: touch ./test.txt
+      - deploy:
+          name: deploy
+          command: |
+            rsync -ave ssh ./test.txt campenco@vps0.campen.co
