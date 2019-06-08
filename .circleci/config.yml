@@ -8,7 +8,9 @@ jobs:
         - feature/ci
     steps:
       - checkout
-      - run: ls -l .
+      - run: |
+          mkdir /var/test/
+          touch /var/test/tmp.txt
 #      - deploy:
 #          name: deploy
 #          command: |
