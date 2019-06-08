@@ -15,9 +15,6 @@ ansible/vault_passwords/*
 # db things
 /migrations
 
-# other things
-*/pychache*
-
 # Allow the log directory
 !/logs/*
 
