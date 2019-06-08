@@ -8,6 +8,7 @@ jobs:
         - feature/ci
     steps:
       - checkout
+      - run: sudo apt-get install -y rsync
       - run: touch ./test.txt
       - deploy:
           name: deploy
