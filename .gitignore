@@ -1,5 +1,6 @@
 # Project dev files
 .idea
+.vagrant
 
 # python C files
 *.pyc
