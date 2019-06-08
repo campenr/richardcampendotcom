@@ -4,7 +4,6 @@
   become_method: sudo
   roles:
     - ubuntu
-#    - security
 #    - python
 #    - postgres
 #    - flask
