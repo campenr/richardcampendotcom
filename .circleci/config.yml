@@ -8,4 +8,8 @@ jobs:
         - feature/ci
     steps:
       - checkout
-      - run: echo "A first hello"
+      - ls -l .
+#      - deploy:
+#          name: deploy
+#          command: |
+#            rsync -ave ssh
