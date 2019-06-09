@@ -5,6 +5,8 @@ app_root: "{{ app_base }}/{{ app_name }}"
 app_virtualenv: "{{ app_base }}/venv/{{ app_name }}"
 app_settings: app.settings.development
 
+ubuntu_host_name: "{{ app_name }}-dev"
+
 postgres_dbs:
   - name: "{{ app_name }}"
     user: "{{ app_name }}"
