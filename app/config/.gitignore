@@ -1,0 +1,13 @@
+# Project dev files
+.idea
+
+# python C files
+*.pyc
+
+# venv files
+/venv
+/venvb
+
+# celery things
+*celerybeat.pid
+*celerybeat-schedule

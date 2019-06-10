@@ -8,15 +8,5 @@ ansible/vault_passwords/*
 # python C files
 *.pyc
 
-# venv files
-/venv
-/venvb
-
-# db things
-/migrations
-
-# Allow the log directory
-!/logs/*
-
 # keep these!
 !.keep
