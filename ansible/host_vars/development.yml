@@ -3,7 +3,6 @@ app_user_name: vagrant
 app_base: "/home/{{ app_user_name }}"
 app_root: "{{ app_base }}/{{ app_name }}"
 app_virtualenv: "{{ app_base }}/venv/{{ app_name }}"
-app_settings: app.settings.development
 
 ubuntu_host_name: "{{ app_name }}-dev"
 
@@ -16,13 +15,4 @@ virtual_environments:
   - path: "{{ app_virtualenv }}"
     user: "{{ app_user_name }}"
     python_version: python3.6
-    requirements_file: "{{ app_root }}/requirements.txt"
-
-django_apps:
-  - name: "{[ app_name }}"
-    user: "{{ app_user_name }}"
-    path: "{{ app_root }}/app"
-    virtualenv: "{{ app_virtualenv }}"
-    settings: "{{ app_settings }}"
-    databases:
-      - default
+    requirements_file: "{{ app_root }}/app/requirements.txt"
