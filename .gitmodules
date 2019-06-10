@@ -7,9 +7,6 @@
 [submodule "ansible/roles/python"]
 	path = ansible/roles/python
 	url = git@github.com:campenr/ansible-role-python.git
-[submodule "config"]
-	path = config
-	url = git@github.com:campenr/campen.co_config.git
 [submodule "ansible/roles/postgres"]
 	path = ansible/roles/postgres
 	url = git@github.com:campenr/ansible-role-postgres.git
