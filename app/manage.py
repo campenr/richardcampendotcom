@@ -10,8 +10,9 @@ from app import flask_app, db
 
 app = flask_app
 
-# app.config.from_object('config')
-migrate = Migrate(app, db)
+MIGRATION_DIR = os.path.join('app', 'migrations')
+
+migrate = Migrate(app, db, directory=MIGRATION_DIR)
 manager = Manager(app)
 manager.add_command('db', MigrateCommand)
 
