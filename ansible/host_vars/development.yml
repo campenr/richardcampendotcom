@@ -17,3 +17,6 @@ virtual_environments:
     user: "{{ app_user_name }}"
     python_version: python3.6
     requirements_file: "{{ app_root }}/app/requirements.txt"
+
+supervisor_users:
+  - "{{ app_user_name }}"
