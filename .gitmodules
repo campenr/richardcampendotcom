@@ -13,3 +13,6 @@
 [submodule "app/config"]
 	path = app/config
 	url = git@github.com:campenr/campen.co_config.git
+[submodule "ansible/roles/flask"]
+	path = ansible/roles/flask
+	url = git@github.com:campenr/ansible-role-flask.git
