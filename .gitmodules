@@ -16,3 +16,6 @@
 [submodule "ansible/roles/flask"]
 	path = ansible/roles/flask
 	url = git@github.com:campenr/ansible-role-flask.git
+[submodule "ansible/roles/supervisor"]
+	path = ansible/roles/supervisor
+	url = git@github.com:campenr/ansible-role-supervisor.git
