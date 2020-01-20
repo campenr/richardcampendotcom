@@ -8,3 +8,5 @@
     - postgres
     - flask
     - supervisor
+    - uwsgi
+    - nginx

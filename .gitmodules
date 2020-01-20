@@ -19,3 +19,9 @@
 [submodule "ansible/roles/supervisor"]
 	path = ansible/roles/supervisor
 	url = git@github.com:campenr/ansible-role-supervisor.git
+[submodule "ansible/roles/uwsgi"]
+	path = ansible/roles/uwsgi
+	url = git@github.com:campenr/ansible-role-uwsgi.git
+[submodule "ansible/roles/nginx"]
+	path = ansible/roles/nginx
+	url = git@github.com:campenr/ansible-role-nginx.git
