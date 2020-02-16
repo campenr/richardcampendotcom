@@ -14,9 +14,9 @@ jobs:
       - checkout
       - run: git submodule sync && git submodule update --init
       - run: sudo apt-get install -y rsync ansible
-      - run: ls .
       - deploy:
           name: deploy
           command: |
             rsync --archive --no-owner --no-group --delete --exclude="*.pyc" app richardcampendotcom@vps1.campen.co:~/
-            cd ansible && ansible-playbook server.yml -i ./hosts.ini -l production -t app-configure -v
+            echo $PRODUCTION_VAULT_PASS > ./ansible/vault_passwords/production
+            cd ansible && ansible-playbook playbook.yml -i ./hosts.ini -l production -t app-configure -v
