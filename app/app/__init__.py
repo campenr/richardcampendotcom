@@ -13,16 +13,16 @@ from config import config
 flask_app = Flask(__name__)
 
 # load correct config settings based on environment variable, or default to 'development' environment
-config_name = os.environ.get('CONFIG_ENV')
-if config_name is None:
+environment = os.environ.get('ENVIRONMENT')
+if environment is None:
     print('-Loading configuration: No environment specified, defaulting to development environment')
-    config_name = 'development'
+    environment = 'development'
 else:
-    print('-Loading configuration: ', config_name)
-flask_app.config.from_object(config[config_name])
+    print('-Loading configuration: ', environment)
+flask_app.config.from_object(config[environment])
 
 # enable wekzeug debug traceback when running behind uWSGI
-if config_name == 'development':
+if environment == 'development':
     from werkzeug.debug import DebuggedApplication
     flask_app.wsgi_app = DebuggedApplication(flask_app.wsgi_app, True)
 
