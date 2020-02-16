@@ -12,6 +12,7 @@
     - nginx
 
 - hosts: production
+  remote_user: richardcampendotcom
   roles:
     - python
     - flask
