@@ -10,6 +10,7 @@ jobs:
       - checkout
       - run: sudo apt-get install -y rsync
       - run: ls .
+      - rsync --archive --no-owner --no-group --delete --exclude="*.pyc" app richardcampendotcom@vps1.campen.co:~/app/
 #      - deploy:
 #          name: deploy
 #          command: rsync -ave ssh ./test/ campenco@vps0.campen.co:/home/campenco/test/
