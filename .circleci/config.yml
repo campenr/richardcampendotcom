@@ -5,7 +5,7 @@ jobs:
       - image: circleci/python:3.6-stretch
     branches:
       only:
-        - feature/ci
+        - feature/vagrant
     steps:
       - checkout
       - run: sudo apt-get install -y rsync
