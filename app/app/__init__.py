@@ -21,6 +21,11 @@ else:
     print('-Loading configuration: ', config_name)
 flask_app.config.from_object(config[config_name])
 
+# enable wekzeug debug traceback when running behind uWSGI
+if config_name == 'development':
+    from werkzeug.debug import DebuggedApplication
+    flask_app.wsgi_app = DebuggedApplication(flask_app.wsgi_app, True)
+
 # db setup
 db = SQLAlchemy(flask_app)
 

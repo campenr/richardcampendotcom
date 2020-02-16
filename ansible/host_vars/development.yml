@@ -1,12 +1,11 @@
 ---
-app_name: campenco
+app_name: richardcampendotcom
 app_user_name: vagrant
-app_domain: campen.co
-app_base: "/home/{{ app_user_name }}/"
-app_root: "{{ app_base }}{{ app_name }}/"
-app_virtualenv: "{{ app_base }}venv/{{ app_name }}/"
-app_config_path: "{{ app_base }}config/{{ app_name }}/"
-app_log_path: "{{ app_base }}logs/{{ app_name }}/"
+app_domain: richardcampen.com
+app_root: "/home/{{ app_user_name }}/"
+app_virtualenv: "{{ app_root }}venv/"
+app_config_path: "{{ app_root }}config/"
+app_log_path: "{{ app_root }}logs/"
 
 ubuntu_host_name: "{{ app_name }}-dev"
 
@@ -39,6 +38,8 @@ uwsgi_apps:
     log_dir: "{{ app_log_path }}uwsgi/"
     config_dir: "{{ app_config_path }}uwsgi/"
     stats_port: "5151"
+    autostart: "false"
+    py_autoreload: "1"
 
 nginx_virtual_servers:
   - name: "{{ app_name }}"
