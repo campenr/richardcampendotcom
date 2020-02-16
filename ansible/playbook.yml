@@ -10,3 +10,9 @@
     - supervisor
     - uwsgi
     - nginx
+
+- hosts: production
+  roles:
+    - python
+    - flask
+    - uwsgi

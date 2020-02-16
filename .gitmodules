@@ -25,3 +25,6 @@
 [submodule "ansible/roles/nginx"]
 	path = ansible/roles/nginx
 	url = git@github.com:campenr/ansible-role-nginx.git
+[submodule "ansible/host_vars/production"]
+	path = ansible/host_vars/production
+	url = git@github.com:campenr/ansible_host_richardcampendotcom.git
