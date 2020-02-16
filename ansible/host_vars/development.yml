@@ -39,12 +39,14 @@ uwsgi_apps:
     config_dir: "{{ app_config_path }}uwsgi/"
     stats_port: "5151"
     autostart: "false"
+    restarted_state: "stopped"  # the dev server should not be running by the supervisorctl by default
     py_autoreload: "1"
 
 nginx_virtual_servers:
   - name: "{{ app_name }}"
     user: "{{ app_user_name }}"
     domain: "_"
+    config_dir: "{{ app_config_path }}nginx/"
     socket_dir: "/var/uwsgi/{{ app_name }}/"
     root_dir: "{{ app_root }}app"
     log_dir: "{{ app_log_path }}nginx/"
