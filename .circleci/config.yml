@@ -10,7 +10,7 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "f9:13:53:26:23:82:07:3c:47:3a:3f:02:a8:5c:3c:3c"
-      - run: echo $REMOTE_HOSTKEY >> ~/.ssh/known_hosts
+      - run: ssh-keyscan vps1.campen.co >> ~/.ssh/known_hosts
       - checkout
       - run: sudo apt-get install -y rsync
       - run: ls .
