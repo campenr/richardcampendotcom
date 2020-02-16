@@ -9,10 +9,7 @@ jobs:
     steps:
       - checkout
       - run: sudo apt-get install -y rsync
-      - run: |
-          mkdir ./test
-          echo "hello world" > ./test/test.txt
-      - deploy:
-          name: deploy
-          command: |
-            rsync -ave ssh ./test/ campenco@vps0.campen.co:/home/campenco/test/
+      - run: ls .
+#      - deploy:
+#          name: deploy
+#          command: rsync -ave ssh ./test/ campenco@vps0.campen.co:/home/campenco/test/
