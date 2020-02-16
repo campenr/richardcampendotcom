@@ -19,4 +19,4 @@ jobs:
           name: deploy
           command: |
             rsync --archive --no-owner --no-group --delete --exclude="*.pyc" app richardcampendotcom@vps1.campen.co:~/
-            cd ansible && ansible-playbook -i ./hosts.ini -l production -t app-configure -v
+            cd ansible && ansible-playbook server.yml -i ./hosts.ini -l production -t app-configure -v
