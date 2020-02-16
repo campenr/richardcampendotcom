@@ -18,6 +18,6 @@ jobs:
       - deploy:
           name: deploy
           command: |
-            rsync --archive --no-owner --no-group --delete --exclude="*.pyc" app richardcampendotcom@vps1.campen.co:~/
+            rsync -v --archive --no-owner --no-group --delete --exclude="*.pyc" app richardcampendotcom@vps1.campen.co:~/
             echo $PRODUCTION_VAULT_PASS > ./ansible/vault_passwords/production
             cd ansible && ansible-playbook playbook.yml -i ./hosts.ini -l production -t app-configure -v
