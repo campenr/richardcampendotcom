@@ -27,6 +27,7 @@ flask_apps:
 supervisor_users:
   - "{{ app_user_name }}"
 
+uwsgi_emperor_mode: False
 uwsgi_apps:
   - name: "{{ app_name }}"
     user: "{{ app_user_name }}"
