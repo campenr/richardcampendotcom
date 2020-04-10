@@ -39,9 +39,7 @@ uwsgi_apps:
     log_dir: "{{ app_log_path }}uwsgi/"
     config_dir: "{{ app_config_path }}uwsgi/"
     stats_port: "5151"
-    autostart: "false"
-    restarted_state: "stopped"  # the dev server should not be running by the supervisorctl by default
-    py_autoreload: "1"
+    py_autoreload: "1"  # enable auto-reload of the dev server
 
 nginx_virtual_servers:
   - name: "{{ app_name }}"
