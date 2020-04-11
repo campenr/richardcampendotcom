@@ -1,3 +1,5 @@
+{% from "macros.html" import nav_link with context %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,16 +38,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-center" href="/" class="nav-link">HOME</a>
+                    {{ nav_link("index", "about") }}
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-center" href="{{ url_for('software') }}" class="nav-link">SOFTWARE</a>
+                    {{ nav_link("software", "software") }}
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-center" href="{{ url_for('publications') }}" class="nav-link">PUBLICATIONS</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-center" href="{{ url_for('projects') }}" class="nav-link">PROJECTS</a>
+                    {{ nav_link("publications", "publications") }}
                 </li>
             </ul>
         </div>
@@ -53,7 +52,7 @@
 
     <div class="container main-content">
         <div class="row">
-            <div class="col-9 mx-auto" style="text-align: center;">
+            <div class="col-8 mx-auto" style="text-align: center;">
                 <hr/>
                 {% block main_content %}
                     {# page specific main content fills in here. #}

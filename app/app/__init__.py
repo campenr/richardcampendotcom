@@ -26,10 +26,4 @@ db = SQLAlchemy(flask_app)
 print('-Importing views, models')
 from app import views, models
 
-print('-Configuring trackers')
-from app import trackers
-flask_app.software_trackers = {
-    'pypi': trackers.PYPITracker
-}
-
 print('-Init complete')
