@@ -1,8 +1,3 @@
-# Copyright 2017 Richard Campen
-# All rights reserved
-# This software is released under the Modified BSD license
-# See LICENSE.txt for the full license documentation
-
 from flask import render_template
 from app import flask_app
 from app.models import Software
@@ -16,9 +11,7 @@ def index():
 
 @flask_app.route('/software')
 def software():
-
     software_versions = {software_.name: software_.version for software_ in Software.query.all()}
-
     return render_template('software.html', software_versions=software_versions)
 
 
