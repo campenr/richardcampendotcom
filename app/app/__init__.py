@@ -1,6 +1,8 @@
+import os
+
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-import os
+from flask_sitemap import Sitemap
 
 from config import config
 
@@ -22,6 +24,9 @@ if environment == 'development':
 
 # db setup
 db = SQLAlchemy(flask_app)
+
+# sitemap setup
+sitemap = Sitemap(flask_app)
 
 print('-Importing views, models')
 from app import views, models
