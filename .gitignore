@@ -8,8 +8,14 @@
 # secrets
 ansible/vault_passwords/*
 
+# pycache files
+__pycache__/
+
 # python C files
 *.pyc
 
 # keep these!
 !.keep
+
+# hide secret local settings
+local.py

@@ -6,7 +6,7 @@ from flask_migrate import Migrate, MigrateCommand
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
-from app import flask_app, db
+from config import flask_app, db
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
