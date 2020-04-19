@@ -31,9 +31,6 @@ flask_apps:
       - key: SQLALCHEMY_DATABASE_URI
         value: "'postgresql://{{ app_user_name }}:password@localhost:5432/{{ app_name }}'"
 
-supervisor_users:
-  - "{{ app_user_name }}"
-
 uwsgi_emperor_mode: False
 uwsgi_apps:
   - name: "{{ app_name }}"
