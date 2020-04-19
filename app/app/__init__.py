@@ -2,6 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_sitemap import Sitemap
 
+
 flask_app = Flask(__name__)
 flask_app.config.from_object('config')
 
@@ -13,3 +14,4 @@ if flask_app.config.get('DEBUG') is True:
 db = SQLAlchemy(flask_app)
 sitemap = Sitemap(flask_app)
 
+from app import views, models
