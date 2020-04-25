@@ -6,6 +6,13 @@ const glob = require('glob');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
+const LiveReloadPlugin = require('webpack-livereload-plugin');
+
+const ENVIRONMENT = process.env.ENVIRONMENT;
+
+// we don't want to use content hashed file names in development otherwise we'll end up
+// with a million files when we're running webpack watch.
+const staticNameFormat = ENVIRONMENT === 'development' ? '[name]' : '[name].[contenthash]'
 
 module.exports = {
   mode: 'production',
@@ -14,7 +21,7 @@ module.exports = {
     './frontend/scss/main.scss',
   ],
   output: {
-    filename: 'static/js/[name].[contenthash].js',
+    filename: `static/js/${staticNameFormat}.js`,
     path: path.resolve(__dirname, '..', 'app'),
   },
   module: {
@@ -25,15 +32,10 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: {
-              importLoaders: 2,
-              sourceMap: true,
-            },
           },
           {
             loader: 'postcss-loader',
             options: {
-              sourceMap: true,
               config: {
                 path: './webpack',
               },
@@ -42,7 +44,6 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: true,
               sassOptions: {
                 outputStyle: 'compressed',
               }
@@ -61,16 +62,23 @@ module.exports = {
         },
       }),
       new MiniCssExtractPlugin({
-        filename: 'static/css/[name].[contenthash].css',
+        filename: `static/css/${staticNameFormat}.css`,
         path: path.resolve(__dirname, '..', 'app'),
       }),
       new PurgecssPlugin({
         paths: glob.sync(`${path.join(__dirname, '..', 'app')}/**/*`,  { nodir: true }),
+      }),
+      new LiveReloadPlugin({
+        // because we're not using hashed file names when running webpack watch we need to check hashes here.
+        useSourceHash: true,
       }),
   ],
   optimization: {
     splitChunks: {
       chunks: 'all',
     },
+  },
+  watchOptions: {
+    ignored: /node_modules/,
   },
 };
