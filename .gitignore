@@ -8,6 +8,7 @@
 # node things
 node_modules/
 app/static/js/
+app/static/css/
 webpack-manifest.json
 
 # secrets
