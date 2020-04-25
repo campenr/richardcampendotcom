@@ -14,4 +14,4 @@ if flask_app.config.get('DEBUG') is True:
 db = SQLAlchemy(flask_app)
 sitemap = Sitemap(flask_app)
 
-from app import views, models
+from app import views, models, context_processors
