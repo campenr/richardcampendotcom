@@ -12,9 +12,7 @@
     <meta name="description" content="Hi, My name is Richard Campen. I am a python developer with a PhD in Molecular Microbiology, and this is my site."/>
 
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ static_chunk('main.css') | safe }}" />
 
     {% block head %}
         {# Site/App specific head_content goes here. #}
@@ -76,8 +74,8 @@
     {# load js #}
     <script type="text/javascript">var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-67087023-1']);_gaq.push(['_trackPageview']);(function(){var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>
 
-    {{ static_chunk('main.js') | safe }}
-    {{ static_chunk('vendors~main.js') | safe }}
+    <script src="{{ static_chunk('main.js') | safe }}"></script>
+    <script src="{{ static_chunk('vendors~main.js') | safe }}"></script>
 
 </body>
 </html>
