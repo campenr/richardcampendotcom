@@ -1,7 +1,6 @@
 import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/collapse';
 
-
 window.onload = init();
 
 function init() {

@@ -18,5 +18,5 @@ def static_chunk(filename):
 
     static_file = manifest.get(filename)
     if static_file:
-        return f"<script src=\"{ url_for('static', filename=static_file) }\"></script>"
+        return url_for('static', filename=static_file)
     return ''  # no matching file so return something that won't break html
