@@ -16,6 +16,8 @@ jobs:
       - deploy:
           name: deploy
           command: |
+            whoami
+            ls -la
             nvm install
             nvm use
             npm install
