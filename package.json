@@ -4,6 +4,7 @@
   "description": "My personal website.",
   "private": true,
   "scripts": {
+    "watch": "ENVIRONMENT=development webpack --watch --info-verbosity verbose --config webpack/webpack.config.js",
     "build": "webpack --config webpack/webpack.config.js",
     "test": "echo \\\"Error: no test specified\\\" && exit 1"
   },
@@ -35,6 +36,7 @@
     "style-loader": "^1.2.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
+    "webpack-livereload-plugin": "^2.3.0",
     "webpack-manifest-plugin": "^2.2.0"
   }
 }
