@@ -7,6 +7,8 @@
 
 # node things
 node_modules/
+app/static/js/
+webpack-manifest.json
 
 # secrets
 ansible/vault_passwords/*
