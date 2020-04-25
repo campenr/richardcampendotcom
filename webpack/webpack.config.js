@@ -1,12 +1,18 @@
 'use strict';
 
 const path = require('path');
+const glob = require('glob');
 
 const ManifestPlugin = require('webpack-manifest-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
 
 module.exports = {
-  entry: './frontend/js/index.js',
+  mode: 'production',
+  entry: [
+    './frontend/js/index.js',
+    './frontend/scss/main.scss',
+  ],
   output: {
     filename: 'static/js/[name].[contenthash].js',
     path: path.resolve(__dirname, '..', 'app'),
@@ -57,6 +63,9 @@ module.exports = {
       new MiniCssExtractPlugin({
         filename: 'static/css/[name].[contenthash].css',
         path: path.resolve(__dirname, '..', 'app'),
+      }),
+      new PurgecssPlugin({
+        paths: glob.sync(`${path.join(__dirname, '..', 'app')}/**/*`,  { nodir: true }),
       }),
   ],
   optimization: {
