@@ -1,4 +1,4 @@
-{% from "macros.html" import nav_link with context %}
+{% from "macros.html" import nav_link, webpack_watch_livereload with context %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -76,6 +76,8 @@
 
     <script src="{{ static_chunk('main.js') | safe }}"></script>
     <script src="{{ static_chunk('vendors~main.js') | safe }}"></script>
+
+    {{ webpack_watch_livereload() }}
 
 </body>
 </html>
