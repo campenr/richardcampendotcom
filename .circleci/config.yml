@@ -5,7 +5,7 @@ jobs:
       - image: campenr/web-build:latest
     branches:
       only:
-        - feature/webpack
+        - production
     steps:
       - add_ssh_keys:
           fingerprints:
@@ -14,21 +14,18 @@ jobs:
       - checkout
       - run: git submodule sync && git submodule update --init
       - run:
-          name: Setup nvm
+          name: Build frontend
           command: |
             echo 'export NVM_DIR=$HOME/.nvm' >> $BASH_ENV
             . $BASH_ENV
             . $NVM_DIR/nvm.sh --no-use
-      - run:
-          name: Build frontend
-          command: |
             nvm install
             nvm use
             npm install
             npm run build
-#      - deploy:
-#          name: deploy
-#          command: |
-#            rsync -v --archive --no-owner --no-group --delete --exclude="*.pyc" app richardcampendotcom@vps1.campen.co:~/
-#            echo $PRODUCTION_VAULT_PASS > ./ansible/vault_passwords/production
-#            cd ansible && ansible-playbook playbook.yml -i ./hosts.ini -l production -t app-configure -v
+      - deploy:
+          name: deploy
+          command: |
+            rsync -v --archive --no-owner --no-group --delete --exclude="*.pyc" app richardcampendotcom@vps1.campen.co:~/
+            echo $PRODUCTION_VAULT_PASS > ./ansible/vault_passwords/production
+            cd ansible && ansible-playbook playbook.yml -i ./hosts.ini -l production -t app-configure -v
