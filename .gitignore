@@ -5,6 +5,9 @@
 # log files
 *.log
 
+# node things
+node_modules/
+
 # secrets
 ansible/vault_passwords/*
 
