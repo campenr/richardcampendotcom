@@ -9,6 +9,7 @@
 node_modules/
 app/static/js/
 app/static/css/
+app/static/img/
 webpack-manifest.json
 
 # secrets
