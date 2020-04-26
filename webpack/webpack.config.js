@@ -5,6 +5,7 @@ const glob = require('glob');
 
 const ManifestPlugin = require('webpack-manifest-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
 
@@ -57,14 +58,23 @@ module.exports = {
       new ManifestPlugin({
         fileName: 'static/webpack-manifest.json',
         map: (file) => {
-            file.path = file.path.replace(/static\//, '');
-            return file;
+          file.path = file.path.replace(/static\//, '');
+          return file;
         },
+        filter: (file) => {
+          return !file.path.match(/\/img\//);  // don't add image files to the manifest
+        }
       }),
       new MiniCssExtractPlugin({
         filename: `static/css/${staticNameFormat}.css`,
         path: path.resolve(__dirname, '..', 'app'),
       }),
+      new CopyPlugin([
+        {
+          from: path.join(__dirname, '..', 'frontend', 'img'),
+          to: path.join(__dirname, '..', 'app', 'static', 'img')
+        },
+      ]),
       new PurgecssPlugin({
         paths: glob.sync(`${path.join(__dirname, '..', 'app')}/**/*`,  { nodir: true }),
       }),
