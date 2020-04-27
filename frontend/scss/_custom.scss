@@ -45,6 +45,12 @@ $navbar-nav-link-padding-y: 0;
     flex: 1;
 }
 
+.svg-link {
+    &:hover, &:focus {
+        text-decoration: none !important;
+    }
+}
+
 .debug {
     div, p, nav,
     ul,li,
