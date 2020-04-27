@@ -1,16 +1,11 @@
 {% extends "base.html" %}
 
-{% block head %}
-    {# Page specific header content goes here. #}
-{% endblock %}
+{% from "macros.html" import page_heading %}
 
 {% block main_content %}
-    {# NOTE: This content is wrapped in a bootstrap container #}
     {# Insert page specific body here. #}
 
-    <div class="pt-3 pb-4 d-block d-sm-none">
-        <h3 class="pt-2">Publications</h3>
-    </div>
+    {{ page_heading('Publications') }}
 
     <p class="pt-3 pb-2 px-3">
         <b>Campen, Richard</b>;

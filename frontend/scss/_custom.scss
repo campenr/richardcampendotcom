@@ -1,9 +1,9 @@
 $body-color: #212529;
-$body-bg: #444;
+$body-bg: #fcfcfc;
 
 $headings-color: #444;
 
-$navbar-light-color: $body-bg;
+$navbar-light-color: $headings-color;
 $navbar-light-active-color: $body-color;
 
 $navbar-nav-link-padding-x: 0;
@@ -35,15 +35,6 @@ $navbar-nav-link-padding-y: 0;
     }
 }
 
-.debug {
-    div, p, nav,
-    ul,li,
-    button {
-        border: orange solid 1px;
-        background: rgba(orange, 0.1);
-    }
-}
-
 .main-wrapper {
     display: flex;
     min-height: 100vh;
@@ -52,4 +43,13 @@ $navbar-nav-link-padding-y: 0;
 
 .main-content {
     flex: 1;
+}
+
+.debug {
+    div, p, nav,
+    ul,li,
+    button {
+        border: orange solid 1px;
+        background: rgba(orange, 0.1);
+    }
 }

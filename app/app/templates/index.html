@@ -1,19 +1,14 @@
 {% extends "base.html" %}
 
-{% block head %}
-    {# Page specific header content goes here. #}
-{% endblock %}
+{% from "macros.html" import page_heading %}
 
 {% block main_content %}
-    {# NOTE: This content is wrapped in a bootstrap container #}
     {# Insert page specific body here. #}
 
-    <div class="pt-3 d-block d-sm-none">
-        <h3 class="pt-2">About</h3>
-    </div>
+    {{ page_heading('About') }}
 
-    <p class="pt-5 pb-4 px-3">
-        <img class="rounded-circle" src="{{ url_for('static', filename='img/headshot_300px.png') }}" alt="Picture of Richard Campen" style="width: 150px; height: 150px;">
+    <p class="py-4 pt-sm-5">
+        <img class="rounded-circle" src="{{ url_for('static', filename='img/headshot_300px.png') }}" alt="Picture of Richard Campen" width="150px" height="150px">
     </p>
 
     <p class="pt-3 pb-2 px-3">

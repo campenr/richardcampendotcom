@@ -8,6 +8,18 @@
     {% if request.endpoint.endswith(endpoint) %}active{% endif %}
 {% endmacro %}
 
+{% macro page_heading(heading) %}
+    <div class="d-block d-sm-none pt-5 pb-3">
+        <h2 class="h3">{{ heading }}</h2>
+    </div>
+{% endmacro %}
+
+{% macro section_heading(heading) %}
+    <div class="pt-5 pb-1">
+        <h3 class="h4">{{ heading }}</h3>
+    </div>
+{% endmacro %}
+
 {% macro webpack_watch_livereload() %}
     {% if config.DEBUG %}
         <script src="http://localhost:35729/livereload.js"></script>

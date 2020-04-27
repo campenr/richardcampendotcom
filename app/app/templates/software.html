@@ -1,22 +1,15 @@
 {% extends "base.html" %}
 
-{% block head %}
-    {# Page specific header content goes here. #}
-{% endblock %}
+{% from "macros.html" import page_heading, section_heading %}
 
 {% block main_content %}
-    {# NOTE: This content is wrapped in a bootstrap container #}
     {# Insert page specific body here. #}
 
-    <div class="pt-3 pb-4 d-block d-sm-none">
-        <h3 class="pt-2">Software</h3>
-    </div>
+    {{ page_heading('Software') }}
 
-    <div class="pt-3 pb-1">
-        <h4 class="pt-2">Websites / Web Apps</h4>
-    </div>
+    {# ----------------------------------------------------------- #}
 
-    {# TODO: change styling of links #}
+    {{ section_heading('Websites / Web Apps')  }}
 
     <p class="pt-3 pb-2 px-3">
         <a target="_blank" rel="nooperner noreferrer" href="https://richardcampen.com">
@@ -44,9 +37,7 @@
 
     {# ----------------------------------------------------------- #}
 
-    <div class="pt-3 pb-1">
-        <h4 class="pt-2">Python Packages</h4>
-    </div>
+    {{ section_heading('Python Packages')  }}
 
     <p class="pt-3 pb-2 px-3">
         <b>mothur-py</b> - a python wrapper for the command line bioinformatics tool mothur.
