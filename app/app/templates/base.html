@@ -29,37 +29,9 @@
 
 </head>
 
-<body class="main-wrapper" style="background-color: #fcfcfc;">
+<body class="main-wrapper " style="background-color: #fcfcfc;">
 
-    <div class="container d-none d-sm-block" style="text-align: center;">
-        {# Hidden at small sizes and replaced with Navbar branding #}
-        <p class="display-4 pt-3 pb-2">Richard Campen</p>
-    </div>
-
-    <nav class="navbar navbar-expand-sm navbar-light bg-light" style="background-color: #fcfcfc !important;">
-
-        <span class="text-center mx-auto d-sm-none" style="font-size: 2rem; color: #444444; font-weight: lighter; width: 60%;">Richard Campen</span>
-
-        <div class="position-absolute" style="top: 14px; right: 16px;">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                    {{ nav_link("index", "about") }}
-                </li>
-                <li class="nav-item">
-                    {{ nav_link("software", "software") }}
-                </li>
-                <li class="nav-item">
-                    {{ nav_link("publications", "publications") }}
-                </li>
-            </ul>
-        </div>
-    </nav>
+    {% include 'partials/header.html' %}
 
     <div class="container main-content">
         <div class="row">
@@ -72,13 +44,7 @@
         </div>
     </div>
 
-    <div class="footer pb-1 pt-3 text-center">
-        <p id='copyright'>
-            <small>
-                Copyright &#169 <span id="copyright-year"></span> <a href="https://richardcampen.com">Richard Campen</a>
-            </small>
-        </p>
-    </div>
+    {% include 'partials/footer.html' %}
 
     {# load js #}
     <script src="{{ static_chunk('main.js') | safe }}"></script>

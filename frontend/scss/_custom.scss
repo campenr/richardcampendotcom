@@ -1,3 +1,49 @@
+$body-color: #212529;
+$body-bg: #444;
+
+$headings-color: #444;
+
+$navbar-light-color: $body-bg;
+$navbar-light-active-color: $body-color;
+
+$navbar-nav-link-padding-x: 0;
+$navbar-nav-link-padding-y: 0;
+
+.navbar {
+    padding: 0;
+}
+
+@media (min-width: 576px) {
+    .navbar-expand-sm {
+        flex-flow: inherit !important;
+        justify-content: center !important;
+    }
+}
+
+.navbar-light {
+    .nav-link.active {
+        border-bottom: $body-color solid 1px;
+    }
+
+    .navbar-nav {
+        .nav-link {
+            &:hover,
+            &:focus, {
+                border-bottom: $body-color solid 1px;
+            }
+        }
+    }
+}
+
+.debug {
+    div, p, nav,
+    ul,li,
+    button {
+        border: orange solid 1px;
+        background: rgba(orange, 0.1);
+    }
+}
+
 .main-wrapper {
     display: flex;
     min-height: 100vh;
