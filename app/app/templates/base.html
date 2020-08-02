@@ -1,10 +1,10 @@
 {% from "macros.html" import nav_link, webpack_watch_livereload with context %}
 
 <!DOCTYPE html>
-    <html lang="en-nz">
-      <head>
-        <!-- Required meta tags -->
+<html lang="en-nz">
+    <head>
         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <title>Richard Campen</title>
@@ -14,22 +14,15 @@
         <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
         <link rel="stylesheet" href="{{ static_chunk('main.css') }}" />
 
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-67087023-1"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'UA-67087023-1');
-        </script>
+        {% include 'partials/analytics.html' %}
 
         {% block head %}
-            {# Site/App specific head_content goes here. #}
+            {# page specific head_content goes here. #}
         {% endblock %}
 
     </head>
 
-    <body class="main-wrapper ">
+    <body class="main-wrapper">
 
         {% include 'partials/header.html' %}
 
