@@ -15,6 +15,7 @@ const ENVIRONMENT = process.env.ENVIRONMENT;
 // with a million files when we're running webpack watch.
 const staticNameFormat = ENVIRONMENT === 'development' ? '[name]' : '[name].[contenthash]'
 
+
 module.exports = {
   mode: 'production',
   entry: [
@@ -23,7 +24,7 @@ module.exports = {
   ],
   output: {
     filename: `static/js/${staticNameFormat}.js`,
-    path: path.resolve(__dirname, '..', 'app'),
+    path: path.resolve(__dirname, 'app'),
   },
   module: {
     rules: [
@@ -37,8 +38,10 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              config: {
-                path: './webpack',
+              postcssOptions: {
+                plugins: [
+                  require('autoprefixer'),
+                ],
               },
             },
           },
@@ -72,13 +75,13 @@ module.exports = {
       new CopyPlugin(
         {'patterns': [
           {
-            from: path.join(__dirname, '..', 'frontend', 'img'),
-            to: path.join(__dirname, '..', 'app', 'static', 'img')
+            from: path.join(__dirname, 'frontend', 'img'),
+            to: path.join(__dirname, 'app', 'static', 'img')
           },
         ]
       }),
       new PurgecssPlugin({
-        paths: glob.sync(`${path.join(__dirname, '..', 'app')}/**/*`,  { nodir: true }),
+        paths: glob.sync(`${path.join(__dirname, 'app')}/**/*`,  { nodir: true }),
       }),
       new LiveReloadPlugin({
         // because we're not using hashed file names when running webpack watch we need to check hashes here.
