@@ -19,7 +19,7 @@ const staticNameFormat = ENVIRONMENT === 'development' ? '[name]' : '[name].[con
 module.exports = {
   mode: 'production',
   entry: [
-    './frontend/js/index.js',
+    './frontend/js/main.js',
     './frontend/scss/main.scss',
   ],
   output: {

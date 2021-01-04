@@ -14,8 +14,6 @@
         <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
         <link rel="stylesheet" href="{{ static_chunk('main.css') }}" />
 
-        {% include 'partials/analytics.html' %}
-
         {% block head %}
             {# page specific head_content goes here. #}
         {% endblock %}
