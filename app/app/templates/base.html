@@ -20,18 +20,17 @@
 
     </head>
 
-    <body>
+    <body class="px-6 md:px-16">
 
         {% include 'partials/header.html' %}
 
-        <div>
-            <div>
-                <div>
-                    <hr/>
-                    {% block main_content %}
-                        {# page specific main content fills in here. #}
-                    {% endblock %}
-                </div>
+        <div class="flex flex-wrap-reverse justify-center md:grid md:grid-cols-12">
+            <div class="w-1/2 md:w-full md:col-span-2 xl:col-span-1">
+                {% include 'partials/info_panel.html' %}
+            </div>
+            <div class="md:col-start-5 xl:col-start-4 md:col-end-13 xl:col-end-10">
+                {% block main_content %}
+                {% endblock %}
             </div>
         </div>
 
