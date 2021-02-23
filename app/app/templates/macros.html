@@ -1,24 +1,14 @@
-{% macro nav_link(endpoint, name) %}
+{% macro nav_link(endpoint, text) %}
     <li class="nav-item px-2">
-        <a class="nav-link text-uppercase opacity-90 {{ active_link(endpoint) }}" href="{{ url_for(endpoint) }}">{{ name }}</a>
+        <a class="text-uppercase opacity-90 {{ active_link(endpoint) }}" href="{{ url_for(endpoint) }}">{{ text }}</a>
     </li>
 {% endmacro %}
+
 
 {% macro active_link(endpoint) %}
     {% if request.endpoint.endswith(endpoint) %}active{% endif %}
 {% endmacro %}
 
-{% macro page_heading(heading) %}
-    <div class="d-block d-sm-none pt-5 pb-3">
-        <h2 class="h3">{{ heading }}</h2>
-    </div>
-{% endmacro %}
-
-{% macro section_heading(heading) %}
-    <div class="pt-5 pb-1">
-        <h3 class="h4">{{ heading }}</h3>
-    </div>
-{% endmacro %}
 
 {% macro webpack_watch_livereload() %}
     {% if config.DEBUG %}

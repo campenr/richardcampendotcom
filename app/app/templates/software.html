@@ -1,76 +1,130 @@
 {% extends "base.html" %}
 
-{% from "macros.html" import page_heading, section_heading %}
+{% from "macros.html" import bold_link %}
 
 {% block main_content %}
-    {# Insert page specific body here. #}
 
-    {{ page_heading('Software') }}
+    <div class="mb-16">
 
-    {# ----------------------------------------------------------- #}
+        <h2>Websites / Web Apps</h2>
 
-    {{ section_heading('Websites / Web Apps')  }}
+        <div class="mb-8">
+            <p class="font-black text-xl">
+                <a href="https://richardcampen.com" target="_blank" rel="nooperner noreferrer">
+                    richardcampen.com
+                </a>
+            </p>
 
-    <p class="pt-3 pb-2 px-3">
-        <a target="_blank" rel="nooperner noreferrer" href="https://richardcampen.com">
-            <b>richardcampen.com</b>
-        </a>
-        - My personal website (the one you're on now!) run on Python 3, the Flask microframework, Bootstrap 4, and webpack.
-        <span class="text-nowrap">[
-            <a class="link" target= "_blank" rel="nooperner noreferrer" href="https://github.com/campenr/richardcampen.com">GitHub</a>
-        ]</span>
-    </p>
+            <p>
+                My personal website (the one you're on now!) run on Python 3, the Flask microframework, Tailwind CSS, and Webpack.
+            </p>
 
-    <p class="pt-3 pb-2 px-3">
-        <a target="_blank" rel="nooperner noreferrer" href="https://links.campen.co">
-            <b>links.campen.co</b>
-        </a>
-        - A Python 3 / Flask microframework based web application for creating/managing short URLs. Uses
-        <span class="text-nowrap">Bootstrap 3</span> for mobile responsiveness, Google OAuth2
-        for sign in, PostgreSQL, and jQuery Datatables.
-        <br />
-        <i>Latest release v0.4.0</i> -
-        <span class="text-nowrap">[
-            <a class="link" target= "_blank" rel="nooperner noreferrer" href="https://github.com/campenr/links.campen.co">GitHub</a>
-        ]</span>
-    </p>
+            <p>
+                [ICON]
+                <span class="text-nowrap">[
+                    <a href="https://github.com/campenr/richardcampen.com" target= "_blank" rel="nooperner noreferrer" >
+                        GitHub
+                    </a>
+                ]</span>
+            </p>
+        </div>
 
-    {# ----------------------------------------------------------- #}
+        <div class="mb-8">
+            <p class="font-black text-xl">
+                <a href="https://links.campen.co" target="_blank" rel="nooperner noreferrer">
+                    links.campen.co
+                </a>
+            </p>
 
-    {{ section_heading('Python Packages')  }}
+            <p>
+                A web app for creating / managing short URLs. Run on Python 3, the Flask microframework, Bootstrap 3,
+                Webpack, Google OAuth2, PostgreSQL, and jQuery Datatables.
+            </p>
 
-    <p class="pt-3 pb-2 px-3">
-        <b>mothur-py</b> - a python wrapper for the command line bioinformatics tool mothur.
-        <br />
-        <i>Latest release: v0.4.0</i> -
-        <span class="text-nowrap">[
-            <a class="link" target= "_blank" rel="nooperner noreferrer" href="https://pypi.python.org/pypi/mothur-py">PyPI</a>
-        ]</span>
-        <span class="text-nowrap">[
-            <a class="link" target= "_blank" rel="nooperner noreferrer" href="https://github.com/campenr/mothur-py">GitHub</a>
-        ]</span>
-    </p>
+            <p>
+                [ICON]
+                <span class="text-nowrap">[
+                    <a href="https://github.com/campenr/links.campen.co" target= "_blank" rel="nooperner noreferrer" >
+                        GitHub
+                    </a>
+                ]</span>
+            </p>
+        </div>
 
-    <p class="pt-3 pb-2 px-3">
-        <b>seq-experiment</b> - provides a data structure for easy manipulation of abundance, classification, and
-        metadata generated for and by analysis of next-gen sequence data.
-        <br />
-        <i>Latest release v0.1.2</i> -
-        <span class="text-nowrap">[
-            <a class="link" target= "_blank" rel="nooperner noreferrer" href="https://pypi.python.org/pypi/seq-experiment">PyPI</a>
-        ]</span>
-        <span class="text-nowrap">[
-            <a class="link" target= "_blank" rel="nooperner noreferrer" href="https://github.com/campenr/seq-experiment">GitHub</a>
-        ]</span>
-    </p>
+    </div>
 
-    <p class="pt-3 pb-2 px-3">
-        <b>dirbrowser</b> - a python 3 module that enables basic directory browsing functionality in a command line environment.
-        <br />
-        <i>Latest release: v0.1.0</i> -
-        <span class="text-nowrap">[
-            <a class="link" target= "_blank" rel="nooperner noreferrer" href="https://github.com/campenr/dirbrowser">GitHub</a>
-        ]</span>
-    </p>
+    <div class="mb-8">
+
+        <h2>Python Packages</h2>
+
+        <div class="mb-8">
+            <p class="font-black text-xl">
+                <a href="https://github.com/campenr/mothur-py" target="_blank" rel="nooperner noreferrer">
+                    mothur-py
+                </a>
+            </p>
+
+            <p>
+                A python wrapper for the command line bioinformatics tool mothur.
+            </p>
+
+            <p>
+                [ICON]
+                <span class="text-nowrap">[
+                    <a class="link" target= "_blank" rel="nooperner noreferrer" href="https://pypi.python.org/pypi/mothur-py">PyPI</a>
+                ]</span>
+                <span class="text-nowrap">[
+                    <a class="link" target= "_blank" rel="nooperner noreferrer" href="https://github.com/campenr/mothur-py">GitHub</a>
+                ]</span>
+            </p>
+        </div>
+
+        <div class="mb-8">
+            <p class="font-black text-xl">
+                <a href="https://github.com/campenr/seq-experiment" target="_blank" rel="nooperner noreferrer">
+                    seq-experiment
+                </a>
+            </p>
+
+            <p>
+                Provides a data structure for easy manipulation of abundance, classification, and metadata generated for
+                and by analysis of next-gen sequence data.
+            </p>
+
+            <p>
+                [ICON]
+                <span class="text-nowrap">[
+                    <a class="link" target= "_blank" rel="nooperner noreferrer" href="https://pypi.python.org/pypi/seq-experiment">PyPI</a>
+                ]</span>
+                <span class="text-nowrap">[
+                    <a class="link" target= "_blank" rel="nooperner noreferrer" href="https://github.com/campenr/seq-experiment">GitHub</a>
+                ]</span>
+            </p>
+        </div>
+
+        <div class="mb-8">
+            <p class="font-black text-xl">
+                <a href="https://github.com/campenr/dirbrowser" target="_blank" rel="nooperner noreferrer">
+                    dirbrowser
+                </a>
+            </p>
+
+            <p>
+                A python 3 package that enables basic directory browsing functionality in a command line environment.
+                Also my first ever python package... 🎉
+            </p>
+
+            <p>
+                [ICON]
+                <span class="text-nowrap">[
+                    <a class="link" target= "_blank" rel="nooperner noreferrer" href="https://pypi.org/project/dirbrowser/">PyPI</a>
+                ]</span>
+                <span class="text-nowrap">[
+                    <a class="link" target= "_blank" rel="nooperner noreferrer" href="https://github.com/campenr/dirbrowser">GitHub</a>
+                ]</span>
+            </p>
+        </div>
+
+    </div>
 
 {% endblock %}
