@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind utilities;
 
+p {
+    font-size: 18px;
+    line-height: 30px;
+
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 96px;
+    font-weight: 900;
+    line-height: 116px;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 54px;
+
+    margin-bottom: 2rem;
+}
+
+.nav-item {
+    font-size: 24px;
+    line-height: 29px;
+
+    .active {
+        border-bottom: 2px rgba(0, 0, 0, 0.9) solid;
+    }
+
+}
