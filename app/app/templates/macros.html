@@ -1,6 +1,6 @@
 {% macro nav_link(endpoint, text) %}
     <li class="nav-item px-2">
-        <a class="text-uppercase opacity-90 {{ active_link(endpoint) }}" href="{{ url_for(endpoint) }}">{{ text }}</a>
+        <a class="text-uppercase opacity-90 pb-2 xl:pb-4 {{ active_link(endpoint) }}" href="{{ url_for(endpoint) }}">{{ text }}</a>
     </li>
 {% endmacro %}
 

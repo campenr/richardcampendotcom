@@ -50,14 +50,13 @@
     @screen xl { @apply text-2xl; }
 
     a {
-        @apply pb-4;
         @apply text-black-muted;
         @apply hover:no-underline;
         @apply focus:no-underline;
     }
 
     .active {
-        border-bottom: 3px rgba(0, 0, 0, 0.9) solid;
+        border-bottom: 3px rgba(0, 0, 0, 0.75) solid;
     }
 
 }
