@@ -14,6 +14,7 @@
 
     p {
         @apply mb-4;
+        @apply tracking-wide;
         @screen lg { @apply text-lg; }
     }
 
@@ -26,6 +27,7 @@
 
     h2 {
         @apply mb-8;
+        @apply tracking-wide;
         @apply font-bold;
         @apply text-2xl;
         @screen lg { @apply text-3xl; @apply mb-10 }
@@ -34,7 +36,8 @@
 
     h3 {
         @apply mb-4;
-        @apply font-black;
+        @apply tracking-wide;
+        @apply font-semibold;
         @apply text-lg;
         @screen lg { @apply text-xl; }
     }
