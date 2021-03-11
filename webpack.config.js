@@ -1,12 +1,10 @@
 'use strict';
 
 const path = require('path');
-const glob = require('glob');
 
 const ManifestPlugin = require('webpack-manifest-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const PurgecssPlugin = require('purgecss-webpack-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
 
 const ENVIRONMENT = process.env.ENVIRONMENT;
