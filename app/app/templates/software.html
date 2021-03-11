@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
-{% from "macros.html" import bold_link %}
+{% from "macros.html" import bold_link, link_icon %}
 
 {% block main_content %}
 
-    <div class="mb-16">
+    <div class="main-section">
 
         <h2>Websites / Web Apps</h2>
 
-        <div class="mb-8">
+        <div class="section">
 
             <a href="https://richardcampen.com" target="_blank" rel="nooperner noreferrer">
                 <h3>richardcampen.com</h3>
@@ -19,7 +19,7 @@
             </p>
 
             <p>
-                [ICON]
+                {{ link_icon() }}
                 <span class="text-nowrap">[
                     <a href="https://github.com/campenr/richardcampen.com" target= "_blank" rel="nooperner noreferrer" >
                         GitHub
@@ -28,7 +28,7 @@
             </p>
         </div>
 
-        <div class="mb-8">
+        <div class="section">
 
             <a href="https://links.campen.co" target="_blank" rel="nooperner noreferrer">
                 <h3>links.campen.co</h3>
@@ -40,7 +40,7 @@
             </p>
 
             <p>
-                [ICON]
+                {{ link_icon() }}
                 <span class="text-nowrap">[
                     <a href="https://github.com/campenr/links.campen.co" target= "_blank" rel="nooperner noreferrer" >
                         GitHub
@@ -51,11 +51,11 @@
 
     </div>
 
-    <div class="mb-8">
+    <div class="main-section">
 
         <h2>Python Packages</h2>
 
-        <div class="mb-8">
+        <div class="section">
 
             <a href="https://github.com/campenr/mothur-py" target="_blank" rel="nooperner noreferrer">
                 <h3>mothur-py</h3>
@@ -66,7 +66,7 @@
             </p>
 
             <p>
-                [ICON]
+                {{ link_icon() }}
                 <span class="text-nowrap">[
                     <a class="link" target= "_blank" rel="nooperner noreferrer" href="https://pypi.python.org/pypi/mothur-py">PyPI</a>
                 ]</span>
@@ -76,7 +76,7 @@
             </p>
         </div>
 
-        <div class="mb-8">
+        <div class="section">
 
             <a href="https://github.com/campenr/seq-experiment" target="_blank" rel="nooperner noreferrer">
                 <h3>seq-experiment</h3>
@@ -88,7 +88,7 @@
             </p>
 
             <p>
-                [ICON]
+                {{ link_icon() }}
                 <span class="text-nowrap">[
                     <a class="link" target= "_blank" rel="nooperner noreferrer" href="https://pypi.python.org/pypi/seq-experiment">PyPI</a>
                 ]</span>
@@ -98,7 +98,7 @@
             </p>
         </div>
 
-        <div class="mb-8">
+        <div class="section">
 
             <a href="https://github.com/campenr/dirbrowser" target="_blank" rel="nooperner noreferrer">
                 <h3>dirbrowser</h3>
@@ -110,7 +110,7 @@
             </p>
 
             <p>
-                [ICON]
+                {{ link_icon() }}
                 <span class="text-nowrap">[
                     <a class="link" target= "_blank" rel="nooperner noreferrer" href="https://pypi.org/project/dirbrowser/">PyPI</a>
                 ]</span>

@@ -11,13 +11,13 @@
 
     p {
         @apply mb-4;
-        @screen md { @apply text-lg; }
+        @screen lg { @apply text-lg; }
     }
 
     h1 {
         @apply font-black;
         @apply text-5xl;
-        @screen md { @apply text-7xl; }
+        @screen lg { @apply text-7xl; }
         @screen xl { @apply text-8xl; }
     }
 
@@ -25,7 +25,7 @@
         @apply mb-8;
         @apply font-bold;
         @apply text-2xl;
-        @screen md { @apply text-3xl; }
+        @screen lg { @apply text-3xl; @apply mb-10 }
         @screen xl { @apply text-4xl; }
     }
 
@@ -33,7 +33,7 @@
         @apply mb-4;
         @apply font-black;
         @apply text-lg;
-        @screen md { @apply text-xl; }
+        @screen lg { @apply text-xl; }
     }
 
     a {
@@ -46,7 +46,7 @@
 .nav-item {
 
     @apply text-lg;
-    @screen md { @apply text-xl; }
+    @screen lg { @apply text-xl; }
     @screen xl { @apply text-2xl; }
 
     a {
@@ -56,7 +56,17 @@
     }
 
     .active {
-        border-bottom: 3px rgba(0, 0, 0, 0.75) solid;
+        border-bottom: 2px rgba(0, 0, 0, 0.75) solid;
     }
 
+}
+
+.main-section {
+    @apply mb-16;
+    @screen lg { @apply mb-20; }
+}
+
+.section {
+    @apply mb-8;
+    @screen lg { @apply mb-10; }
 }
