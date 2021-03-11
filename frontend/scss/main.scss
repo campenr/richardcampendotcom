@@ -7,6 +7,9 @@
     body {
         @apply bg-grey-50;
         @apply text-black-muted;
+        @apply flex;
+        @apply flex-col;
+        min-height: 100vh;
     }
 
     p {
@@ -54,6 +57,14 @@
         }
 
     }
+}
+
+.main {
+    @apply flex;
+    flex: 1;
+    @apply flex-wrap-reverse;
+    @apply md:flex-nowrap;
+    @apply justify-center;
 }
 
 .nav-item {
