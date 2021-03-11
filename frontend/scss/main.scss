@@ -40,6 +40,19 @@
         @apply text-blue;
         @apply hover:underline;
         @apply focus:underline;
+
+        svg {
+            @apply text-black-muted;
+        }
+
+        &:hover,
+        &:focus {
+            svg {
+                @apply text-blue;
+                @apply opacity-70;
+            }
+        }
+
     }
 }
 
@@ -51,8 +64,14 @@
 
     a {
         @apply text-black-muted;
-        @apply hover:no-underline;
-        @apply focus:no-underline;
+
+        &:focus,
+        &:hover {
+            @apply no-underline;
+            @apply border-b-2;
+            @apply border-blue;
+            @apply border-opacity-70;
+        }
     }
 
     .active {
