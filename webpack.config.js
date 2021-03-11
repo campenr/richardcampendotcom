@@ -41,6 +41,7 @@ module.exports = {
               postcssOptions: {
                 plugins: [
                   require('autoprefixer'),
+                  require('tailwindcss'),
                 ],
               },
             },
@@ -80,9 +81,9 @@ module.exports = {
           },
         ]
       }),
-      new PurgecssPlugin({
-        paths: glob.sync(`${path.join(__dirname, 'app')}/**/*`,  { nodir: true }),
-      }),
+//      new PurgecssPlugin({
+//        paths: glob.sync(`${path.join(__dirname, 'app')}/**/*`,  { nodir: true }),
+//      }),
       new LiveReloadPlugin({
         // because we're not using hashed file names when running webpack watch we need to check hashes here.
         useSourceHash: true,

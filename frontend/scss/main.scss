@@ -1,2 +1,105 @@
-@import "custom";
-@import "~bootstrap/scss/bootstrap";
+@tailwind base;
+@tailwind utilities;
+
+
+@layer base {
+
+    body {
+        @apply bg-grey-50;
+        @apply text-black-muted;
+        @apply flex;
+        @apply flex-col;
+        min-height: 100vh;
+    }
+
+    p {
+        @apply mb-4;
+        @apply tracking-wide;
+        @screen lg { @apply text-lg; }
+    }
+
+    h1 {
+        @apply font-black;
+        @apply text-5xl;
+        @screen lg { @apply text-7xl; }
+        @screen xl { @apply text-8xl; }
+    }
+
+    h2 {
+        @apply mb-8;
+        @apply tracking-wide;
+        @apply font-bold;
+        @apply text-2xl;
+        @screen lg { @apply text-3xl; @apply mb-10 }
+        @screen xl { @apply text-4xl; }
+    }
+
+    h3 {
+        @apply mb-4;
+        @apply tracking-wide;
+        @apply font-semibold;
+        @apply text-lg;
+        @screen lg { @apply text-xl; }
+    }
+
+    a {
+        @apply text-blue;
+        @apply hover:underline;
+        @apply focus:underline;
+
+        svg {
+            @apply text-black-muted;
+        }
+
+        &:hover,
+        &:focus {
+            svg {
+                @apply text-blue;
+                @apply opacity-70;
+            }
+        }
+
+    }
+}
+
+.main {
+    @apply flex;
+    flex: 1;
+    @apply flex-wrap-reverse;
+    @apply md:flex-nowrap;
+    @apply justify-center;
+}
+
+.nav-item {
+
+    @apply text-lg;
+    @screen lg { @apply text-xl; }
+    @screen xl { @apply text-2xl; }
+
+    a {
+        @apply text-black-muted;
+
+        &:focus,
+        &:hover {
+            @apply no-underline;
+            @apply border-b-2;
+            @apply border-blue;
+            @apply border-opacity-70;
+        }
+    }
+
+    .active {
+        border-bottom: 2px rgba(0, 0, 0, 0.75) solid;
+    }
+
+}
+
+.main-section {
+    @apply mb-16;
+    @screen lg { @apply mb-20; }
+}
+
+.section {
+    @apply mb-8;
+    @screen lg { @apply mb-10; }
+}

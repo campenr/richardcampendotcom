@@ -1,85 +1,108 @@
 {% extends "base.html" %}
 
-{% from "macros.html" import page_heading %}
+{% from "macros.html" import link_icon  %}
 
 {% block main_content %}
-    {# Insert page specific body here. #}
 
-    {{ page_heading('Publications') }}
+    <div class="main-section">
 
-    <p class="pt-3 pb-2 px-3">
-        <b>Campen, Richard</b>;
-        Kowalski, Julia; Lyons, W. Berry; Tulaczyk, Slawek; Dachwald, Bernd; Pettit, Erin; Welch, Kathleen;
-        Mikucki, Jill
-        (2019).
-        Microbial diversity of an Antarctic subglacial community and high‐resolution replicate sampling inform
-        hydrological connectivity in a polar desert.
-        <i>Environmental Microbiology</i>
-        <br>
-        <span class="text-nowrap">[
-            <a target= "_blank" href="https://sfamjournals.onlinelibrary.wiley.com/doi/abs/10.1111/1462-2920.14607" >
-                SFAM
-            </a>
-        ]</span>
-        <span class="text-nowrap">[
-            <a target= "_blank" href="https://scholar.google.com/scholar?oi=bibs&hl=en&cluster=4301036210045625446">
-                scholar.google.com
-            </a>
-        ]</span>
-    </p>
+        <h2>Journal Publications</h2>
 
-    <p class="pt-3 pb-2 px-3">
-        Chua, Michelle;
-        <b>Campen, Richard</b>;
-        Wahl, Lindsay; Grzymski, Joesph; Mikucki, Jill
-        (2018).
-        Genomic and Physiological Characterization and Description of <i>Marinobacter gelidimuriae</i> sp. nov., a
-        Psychrophilic, Moderate Halophile From Blood Falls, an Antarctic Subglacial Brine.
-        <i>FEMS: Microbial Ecology</i>
-        <br>
-        <span class="text-nowrap">[
-            <a target= "_blank" rel="noopener noreferrer" href="https://academic.oup.com/femsec/article/94/3/fiy021/4850642" >
-                Oxford Academic
-            </a>
-        ]</span>
-        <span class="text-nowrap">[
-            <a target= "_blank" rel="noopener noreferrer" href="https://scholar.google.com/scholar?cluster=15262720328020299490&hl=en&as_sdt=0,5">
-                scholar.google.com
-            </a>
-        ]</span>
-    </p>
+        <div class="section">
+            <p>
+                <b>Campen, Richard</b>;
+                Kowalski, Julia; Lyons, W. Berry; Tulaczyk, Slawek; Dachwald, Bernd; Pettit, Erin; Welch, Kathleen;
+                Mikucki, Jill
+                (2019).
+                Microbial diversity of an Antarctic subglacial community and high‐resolution replicate sampling inform
+                hydrological connectivity in a polar desert.
+                <i>Environmental Microbiology</i>
+            </p>
 
-    <p class="pt-3 pb-2 px-3">
-        <b>Campen, R. L.</b> (2015).
-        Investigating the mode of action of tuberculosis drugs using hypersensitive mutants of Mycobacterium smegmatis.
-        <br>
-        <span class="text-nowrap">[
-            <a target= "_blank" rel="noopener noreferrer" href="http://researcharchive.vuw.ac.nz/handle/10063/4314" >
-                researcharchive.vuw.ac.nz
-            </a>
-        ]</span>
-        <span class="text-nowrap">[
-            <a target= "_blank" rel="noopener noreferrer" href="https://scholar.google.com/scholar?cluster=16756147971275072426&hl=en&as_sdt=0,46&as_ylo=2015">
-                scholar.google.com
-            </a>
-        ]</span>
-    </p>
+            <p>
+                {{ link_icon() }}
+                <span class="text-nowrap">[
+                    <a target= "_blank" href="https://sfamjournals.onlinelibrary.wiley.com/doi/abs/10.1111/1462-2920.14607" >
+                        SFAM
+                    </a>
+                ]</span>
+                <span class="text-nowrap">[
+                    <a target= "_blank" href="https://scholar.google.com/scholar?oi=bibs&hl=en&cluster=4301036210045625446">
+                        scholar.google.com
+                    </a>
+                ]</span>
+            </p>
+        </div>
 
-    <p class="pt-3 pb-2 px-3">
-        <b>Campen, R. L.,</b> Ackerley, D. F., Cook, G. M., & O'Toole, R. F. (2015).
-        Development of a Mycobacterium smegmatis transposon mutant array for characterising the mechanism of
-        action of tuberculosis drugs: Findings with isoniazid and its structural analogues. <i>Tuberculosis</i>.
-        <br>
-        <span class="text-nowrap">[
-            <a class="link" target= "_blank" rel="noopener noreferrer" href="http://www.sciencedirect.com/science/article/pii/S1472979215207494">
-                sciencedirect.com
-            </a>
-        ]</span>
-        <span class="text-nowrap">[
-            <a class="link" target= "_blank" rel="noopener noreferrer" href="https://scholar.google.com/scholar?cluster=8693644610430880537&hl=en&as_sdt=0,46&as_ylo=2015">
-                scholar.google.com
-            </a>
-        ]</span>
-    </p>
+        <div class="section">
+            <p>
+                Chua, Michelle;
+                <b>Campen, Richard</b>;
+                Wahl, Lindsay; Grzymski, Joesph; Mikucki, Jill
+                (2018).
+                Genomic and Physiological Characterization and Description of <i>Marinobacter gelidimuriae</i> sp. nov., a
+                Psychrophilic, Moderate Halophile From Blood Falls, an Antarctic Subglacial Brine.
+                <i>FEMS: Microbial Ecology</i>
+            </p>
+
+            <p>
+                {{ link_icon() }}
+                <span class="text-nowrap">[
+                    <a target= "_blank" rel="noopener noreferrer" href="https://academic.oup.com/femsec/article/94/3/fiy021/4850642" >
+                        Oxford Academic
+                    </a>
+                ]</span>
+                <span class="text-nowrap">[
+                    <a target= "_blank" rel="noopener noreferrer" href="https://scholar.google.com/scholar?cluster=15262720328020299490&hl=en&as_sdt=0,5">
+                        scholar.google.com
+                    </a>
+                ]</span>
+            </p>
+        </div>
+
+        <div class="section">
+            <p>
+                <b>Campen, R. L.</b> (2015).
+                Investigating the mode of action of tuberculosis drugs using hypersensitive mutants of Mycobacterium smegmatis.
+            </p>
+
+            <p>
+                {{ link_icon() }}
+                <span class="text-nowrap">[
+                    <a target= "_blank" rel="noopener noreferrer" href="http://researcharchive.vuw.ac.nz/handle/10063/4314" >
+                        researcharchive.vuw.ac.nz
+                    </a>
+                ]</span>
+                <span class="text-nowrap">[
+                    <a target= "_blank" rel="noopener noreferrer" href="https://scholar.google.com/scholar?cluster=16756147971275072426&hl=en&as_sdt=0,46&as_ylo=2015">
+                        scholar.google.com
+                    </a>
+                ]</span>
+            </p>
+        </div>
+
+        <div class="section">
+            <p>
+                <b>Campen, R. L.,</b> Ackerley, D. F., Cook, G. M., & O'Toole, R. F. (2015).
+                Development of a Mycobacterium smegmatis transposon mutant array for characterising the mechanism of
+                action of tuberculosis drugs: Findings with isoniazid and its structural analogues. <i>Tuberculosis</i>.
+            </p>
+
+            <p>
+                {{ link_icon() }}
+                <span class="text-nowrap">[
+                    <a class="link" target= "_blank" rel="noopener noreferrer" href="http://www.sciencedirect.com/science/article/pii/S1472979215207494">
+                        sciencedirect.com
+                    </a>
+                ]</span>
+                <span class="text-nowrap">[
+                    <a class="link" target= "_blank" rel="noopener noreferrer" href="https://scholar.google.com/scholar?cluster=8693644610430880537&hl=en&as_sdt=0,46&as_ylo=2015">
+                        scholar.google.com
+                    </a>
+                ]</span>
+            </p>
+        </div>
+
+    </div>
 
 {% endblock %}

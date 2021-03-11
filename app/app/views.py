@@ -3,8 +3,8 @@ from app import flask_app
 
 
 @flask_app.route('/')
-def index():
-    return render_template("index.html")
+def about():
+    return render_template("about.html")
 
 
 @flask_app.route('/software')

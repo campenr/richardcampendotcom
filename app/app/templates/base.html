@@ -13,6 +13,8 @@
 
         <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
         <link rel="stylesheet" href="{{ static_chunk('main.css') }}" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,600;0,700;0,900;1,500&display=swap" rel="stylesheet">
 
         {% block head %}
             {# page specific head_content goes here. #}
@@ -20,16 +22,17 @@
 
     </head>
 
-    <body class="main-wrapper">
+    <body class="px-6 md:px-10 lg:px-12 xl:px-16">
 
         {% include 'partials/header.html' %}
 
-        <div class="container main-content">
-            <div class="row">
-                <div class="col-12 col-lg-8 mx-auto text-center">
-                    <hr/>
+        <div class="main">
+            <div class="my-16 md:my-0">
+                {% include 'partials/info_panel.html' %}
+            </div>
+            <div class="sm:grid grid-cols-10">
+                <div class="col-start-2 col-end-10 lg:col-start-3 xl:col-end-9 2xl:col-end-8">
                     {% block main_content %}
-                        {# page specific main content fills in here. #}
                     {% endblock %}
                 </div>
             </div>
