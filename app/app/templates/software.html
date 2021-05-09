@@ -4,16 +4,18 @@
 
 {% block title_suffix %}| Software{% endblock %}
 
-{% block main_content %}
+{% block content_aria_label %}software{% endblock %}
 
-    <div class="main-section">
+{% block content %}
 
-        <h2>Websites / Web Apps</h2>
+    <section class="section" aria-labelledby="web-apps-heading">
 
-        <div class="section">
+        <h1 id="web-apps-heading">Websites / Web Apps</h1>
+
+        <div class="sub-section" aria-labelledby="richardcampen-website-heading">
 
             <a href="https://richardcampen.com" target="_blank" rel="nooperner noreferrer">
-                <h3>richardcampen.com</h3>
+                <h2 id="richardcampen-website-heading">richardcampen.com</h2>
             </a>
 
             <p>
@@ -30,10 +32,10 @@
             </p>
         </div>
 
-        <div class="section">
+        <div class="sub-section" aria-labelledby="link-shortener-website-heading">
 
             <a href="https://links.campen.co" target="_blank" rel="nooperner noreferrer">
-                <h3>links.campen.co</h3>
+                <h2 id="link-shortener-website-heading">links.campen.co</h2>
             </a>
 
             <p>
@@ -51,16 +53,16 @@
             </p>
         </div>
 
-    </div>
+    </section>
 
-    <div class="main-section">
+    <section class="section" aria-labelledby="python-packages-heading">
 
-        <h2>Python Packages</h2>
+        <h1 id="python-packages-heading">Python Packages</h1>
 
-        <div class="section">
+        <div class="sub-section" aria-labelledby="mothur-py-heading">
 
             <a href="https://github.com/campenr/mothur-py" target="_blank" rel="nooperner noreferrer">
-                <h3>mothur-py</h3>
+                <h2 id="mothur-py-heading">mothur-py</h2>
             </a>
 
             <p>
@@ -78,10 +80,10 @@
             </p>
         </div>
 
-        <div class="section">
+        <div class="sub-section" aria-labelledby="seq-experiment-heading">
 
             <a href="https://github.com/campenr/seq-experiment" target="_blank" rel="nooperner noreferrer">
-                <h3>seq-experiment</h3>
+                <h2 id="seq-experiment-heading">seq-experiment</h2>
             </a>
 
             <p>
@@ -100,10 +102,10 @@
             </p>
         </div>
 
-        <div class="section">
+        <div class="sub-section" aria-labelledby="dirbrowser-heading">
 
             <a href="https://github.com/campenr/dirbrowser" target="_blank" rel="nooperner noreferrer">
-                <h3>dirbrowser</h3>
+                <h2 id="dirbrowser-heading">dirbrowser</h2>
             </a>
 
             <p>
@@ -122,6 +124,6 @@
             </p>
         </div>
 
-    </div>
+    </section>
 
 {% endblock %}

@@ -4,13 +4,15 @@
 
 {% block title_suffix %}| Publications{% endblock %}
 
-{% block main_content %}
+{% block content_aria_label %}publications{% endblock %}
 
-    <div class="main-section">
+{% block content %}
 
-        <h2>Journal Publications</h2>
+    <div class="section" aria-labelledby="publications-heading">
 
-        <div class="section">
+        <h1 id="publications-heading">Publications</h1>
+
+        <div class="sub-section">
             <p>
                 <b>Campen, Richard</b>;
                 Kowalski, Julia; Lyons, W. Berry; Tulaczyk, Slawek; Dachwald, Bernd; Pettit, Erin; Welch, Kathleen;
@@ -36,7 +38,7 @@
             </p>
         </div>
 
-        <div class="section">
+        <div class="sub-section">
             <p>
                 Chua, Michelle;
                 <b>Campen, Richard</b>;
@@ -62,7 +64,7 @@
             </p>
         </div>
 
-        <div class="section">
+        <div class="sub-section">
             <p>
                 <b>Campen, R. L.</b> (2015).
                 Investigating the mode of action of tuberculosis drugs using hypersensitive mutants of Mycobacterium smegmatis.
@@ -83,7 +85,7 @@
             </p>
         </div>
 
-        <div class="section">
+        <div class="sub-section">
             <p>
                 <b>Campen, R. L.,</b> Ackerley, D. F., Cook, G. M., & O'Toole, R. F. (2015).
                 Development of a Mycobacterium smegmatis transposon mutant array for characterising the mechanism of

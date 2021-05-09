@@ -5,11 +5,19 @@
 @layer base {
 
     body {
-        @apply bg-grey-50;
+        @apply bg-grey;
         @apply text-black-muted;
         @apply flex;
         @apply flex-col;
         min-height: 100vh;
+    }
+
+    main {
+        @apply flex;
+        flex: 1;
+        @apply flex-wrap-reverse;
+        @apply md:flex-nowrap;
+        @apply justify-center;
     }
 
     p {
@@ -25,7 +33,7 @@
         @screen xl { @apply text-8xl; }
     }
 
-    h2 {
+    section h1 {
         @apply mb-8;
         @apply tracking-wide;
         @apply font-bold;
@@ -34,7 +42,7 @@
         @screen xl { @apply text-4xl; }
     }
 
-    h3 {
+    section h2 {
         @apply mb-4;
         @apply tracking-wide;
         @apply font-semibold;
@@ -62,14 +70,6 @@
     }
 }
 
-.main {
-    @apply flex;
-    flex: 1;
-    @apply flex-wrap-reverse;
-    @apply md:flex-nowrap;
-    @apply justify-center;
-}
-
 .nav-item {
 
     @apply text-lg;
@@ -94,12 +94,12 @@
 
 }
 
-.main-section {
+.section {
     @apply mb-16;
     @screen lg { @apply mb-20; }
 }
 
-.section {
+.sub-section {
     @apply mb-8;
     @screen lg { @apply mb-10; }
 }
