@@ -1,11 +1,11 @@
 {
   "name": "richardcampendotcom",
-  "version": "0.1.0",
   "description": "My personal website.",
   "private": true,
   "scripts": {
-    "watch": "ENVIRONMENT=development webpack --watch --info-verbosity verbose",
-    "build": "webpack",
+    "start": "webpack --mode=development",
+    "watch": "webpack --mode=development --watch",
+    "build": "webpack --mode=production",
     "check": "npm-check"
   },
   "repository": {
@@ -19,24 +19,20 @@
   },
   "homepage": "https://github.com/campenr/richardcampendotcom#readme",
   "dependencies": {
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3"
+    "tailwindcss": "^2.1.2"
   },
   "devDependencies": {
-    "autoprefixer": "^9.8.6",
-    "copy-webpack-plugin": "^6.2.0",
-    "css-loader": "^4.3.0",
-    "exports-loader": "^1.1.1",
-    "install": "^0.13.0",
-    "mini-css-extract-plugin": "^0.11.3",
-    "node-sass": "^4.14.1",
-    "npm": "^7.5.4",
+    "autoprefixer": "^10.2.5",
+    "copy-webpack-plugin": "^8.1.1",
+    "css-loader": "^5.2.4",
+    "mini-css-extract-plugin": "^1.6.0",
     "npm-check": "^5.9.2",
-    "postcss-loader": "^4.1.0",
-    "sass-loader": "^10.1.0",
-    "style-loader": "^1.3.0",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12",
-    "webpack-livereload-plugin": "^2.3.0",
-    "webpack-manifest-plugin": "^2.2.0"
+    "postcss-loader": "^5.2.0",
+    "sass": "^1.32.12",
+    "sass-loader": "^11.0.1",
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.7.0",
+    "webpack-livereload-plugin": "^3.0.1",
+    "webpack-manifest-plugin": "^3.1.1"
   }
 }
