@@ -5,8 +5,8 @@ module.exports = {
       'sans': ['Libre Franklin', 'sans-serif'],
     },
     colors: {
-      'blue': '#007BFF',
-      'grey-50': '#F9FAFB',
+      'blue': '#006FEA',
+      'grey': '#F9FAFB',
       'black-muted': '#212529',
     },
     extend: {

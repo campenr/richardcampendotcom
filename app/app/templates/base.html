@@ -37,17 +37,17 @@
 
         {% include 'partials/header.html' %}
 
-        <div class="main">
-            <div class="my-16 md:my-0">
+        <main aria-label="main content">
+            <section aria-label="bio" class="my-16 md:my-0">
                 {% include 'partials/info_panel.html' %}
-            </div>
-            <div class="sm:grid grid-cols-10">
+            </section>
+            <section aria-label="{% block content_aria_label %}{% endblock %}" class="sm:grid grid-cols-10">
                 <div class="col-start-2 col-end-10 lg:col-start-3 xl:col-end-9 2xl:col-end-8">
-                    {% block main_content %}
+                    {% block content %}
                     {% endblock %}
                 </div>
-            </div>
-        </div>
+            </section>
+        </main>
 
         {% include 'partials/footer.html' %}
 
