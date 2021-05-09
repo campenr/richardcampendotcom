@@ -10,11 +10,20 @@ Vagrant.configure("2") do |config|
 
   config.vm.network "forwarded_port", guest: 80, host: 5010
 
-  config.vm.provision :ansible do |ansible|
-    ansible.playbook = "ansible/playbook.yml"
-    ansible.inventory_path = "ansible/hosts.ini"
-    ansible.limit = "development"
-    ansible.verbose = true
+  provisioning_steps = [
+    'server-install',
+    'server-configure',
+    'app-install',
+    'app-configure',
+  ]
+
+  provisioning_steps.each do |step|
+    config.vm.provision name=step, type:"ansible" do |ansible|
+      ansible.playbook = "ansible/playbook.yml"
+      ansible.inventory_path = "ansible/hosts.ini"
+      ansible.limit = "development"
+      ansible.verbose = "v"
+    end
   end
 
   config.vm.provider "virtualbox" do |v|

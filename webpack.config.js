@@ -59,7 +59,7 @@ module.exports = (env, argv) => {
         }
       }),
       new MiniCssExtractPlugin({
-        filename: `static/css/${staticNameFormat}.css`,
+        filename: `static/css/${ staticNameFormat }.css`,
       }),
       new CopyPlugin({
         patterns: [
@@ -71,8 +71,8 @@ module.exports = (env, argv) => {
       }),
       new LiveReloadPlugin({
         // because we're not using hashed file names when running webpack watch we need to check hashes here.
-        // useSourceHash: true,  // wont work with build... maybe will work with watch?
-        useSourceSize: true,
+        // but that's broken right now, so we rely on file size instead which works most of the time.
+        useSourceSize: argv.mode === 'development',
       }),
     ],
     optimization: {
