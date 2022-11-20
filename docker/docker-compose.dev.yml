@@ -6,7 +6,7 @@ services:
     build:
       context: ..
       dockerfile: docker/Dockerfile
-      target: flask_development
+      target: backend_development
     volumes:
       - ..:/app/
     ports:

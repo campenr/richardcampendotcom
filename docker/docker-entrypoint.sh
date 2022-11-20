@@ -1,4 +1,4 @@
 #!/bin/sh
 
 cd app
-python -m gunicorn app.asgi:application -b 0.0.0.0:8080 -k uvicorn.workers.UvicornWorker
+/app/venv/bin/python -m gunicorn wsgi:flask_app -b 0.0.0.0:4325
