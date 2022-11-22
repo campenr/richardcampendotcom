@@ -15,29 +15,30 @@ job "richardcampendotcom" {
       }
     }
 
-    service {
-      name     = "richardcampendotcom-web"
-      tags     = ["global"]
-      port     = "http"
-      provider = "nomad"
-    }
-
     task "flask" {
       driver = "docker"
 
       config {
-        image = "campenr/richardcampendotcom:12"
+        image = "campenr/richardcampendotcom:13"
         force_pull = true
-        auth {
-            username = "campenr"
-            password = "<TODO>"
-        }
         ports = ["http"]
       }
 
       resources {
-        cpu    = 500 # 500 MHz
-        memory = 256 # 256MB
+        cpu = 500 # MHz
+        memory = 256 # MB
+      }
+
+      service {
+        name = "richardcampendotcom-web"
+        port = "http"
+        provider = "nomad"
+        tags = [
+          "traefik.enable=true",
+          "traefik.http.routers.richardcampendotcom-web.rule=Host(`staging-richardcampen.com`)",
+          "traefik.http.routers.richardcampendotcom-web.tls=true",
+          "traefik.http.routers.richardcampendotcom-web.tls.certresolver=letsencrypt",
+        ]
       }
     }
   }
