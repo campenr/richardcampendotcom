@@ -103,3 +103,32 @@
     @apply mb-8;
     @screen lg { @apply mb-10; }
 }
+
+.codehilite {
+    @apply rounded;
+    @apply mt-3 mb-4;
+}
+
+pre {
+    color: #839496;
+    padding: 0;
+    tab-size: 4;
+    word-break: normal;
+    hyphens: none;
+    position: relative;
+    overflow: hidden;
+}
+
+pre code {
+    scrollbar-color: #666 #201c29;
+    background: none;
+    white-space: pre;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: scroll;
+    display: block;
+    max-width: 100%;
+    min-width: 100px;
+    font-size: 16px;
+    padding: 24px 20px 28px 20px;
+    line-height: 1.5;
+}
