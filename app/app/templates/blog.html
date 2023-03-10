@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% from "macros.html" import link_icon  %}
+
+{% block title_suffix %}| Blog | NGINX mod_zip for dynamic file zipping{% endblock %}
+
+{% block content_aria_label %}blog, NGINX mod_zip for dynamic file zipping{% endblock %}
+
+{% block content %}
+
+    <div class="blog block-wrapper">
+        {{ blog|safe }}
+    </div>
+
+{% endblock %}

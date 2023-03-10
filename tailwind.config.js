@@ -15,7 +15,8 @@ module.exports = {
     }
   },
   mode: 'jit',
-  purge: {
-    content: ['./app/app/**/*.html'],
-  },
+  content: ['./app/app/**/*.html'],
+  safelist: [
+      'codehilite',
+  ],
 }

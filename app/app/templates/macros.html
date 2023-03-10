@@ -1,12 +1,12 @@
-{% macro nav_link(endpoint, text) %}
+{% macro nav_link(endpoint, text, active_page) %}
     <li class="nav-item pl-1 pr-2 mb-3 xs:mb-0 md:px-2">
-        <a class="text-uppercase opacity-90 pb-2 xl:pb-4 {{ active_link(endpoint) }}" href="{{ url_for(endpoint) }}">{{ text }}</a>
+        <a class="text-uppercase opacity-90 pb-2 xl:pb-4 {{ active_link(endpoint, active_page) }}" href="{{ url_for(endpoint) }}">{{ text }}</a>
     </li>
 {% endmacro %}
 
 
-{% macro active_link(endpoint) %}
-    {% if request.endpoint.endswith(endpoint) %}active{% endif %}
+{% macro active_link(endpoint, active_page) %}
+    {% if endpoint == active_page %}active{% endif %}
 {% endmacro %}
 
 
