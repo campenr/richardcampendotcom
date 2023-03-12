@@ -51,6 +51,10 @@
         @screen lg { @apply text-lg; }
     }
 
+    ul, ol {
+        @apply ml-4;
+    }
+
     ul {
         @apply list-disc;
     }
@@ -160,7 +164,7 @@
 
     p code {
         background-color: #F3F4F6;
-        @apply rounded p-[3px];
+        @apply rounded px-[3px];
         border: 1px solid #D1D5DB;
         color: #EF4444;
     }

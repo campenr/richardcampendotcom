@@ -1,12 +1,12 @@
 from pathlib import Path
 
-import markdown
-
 from flask import render_template, abort, url_for
+
+import markdown
 from markdown.extensions.codehilite import CodeHiliteExtension
 from markdown.extensions.fenced_code import FencedCodeExtension
 
-from app import flask_app
+from app import flask_app, sitemap
 
 
 @flask_app.route('/')
@@ -24,6 +24,21 @@ def publications():
     return render_template('publications.html', active_page="publications")
 
 
+def _get_blog_items():
+    blog_dir = Path(flask_app.root_path) / '..' / 'blog'
+    items = [item for item in blog_dir.iterdir()]
+    return items
+
+
+blog_items = _get_blog_items()
+
+
+@sitemap.register_generator
+def blog_listing_sitemap():
+    for item in blog_items:
+        yield 'blog_item', {'name': item.stem}
+
+
 @flask_app.route('/blog')
 def blog_listing():
     return render_template('blog_listing.html', active_page="blog_listing")
@@ -32,8 +47,7 @@ def blog_listing():
 @flask_app.route('/blog/<string:name>')
 def blog_item(name):
 
-    blog_dir = Path(flask_app.root_path) / '..' / 'blog'
-    item = [item for item in blog_dir.iterdir() if item.stem == name]
+    item = [item for item in blog_items if item.stem == name]
 
     if not item:
         abort(404)
