@@ -20,7 +20,7 @@ For the last item, the aforementioned Django package may be good enough for you,
 
 **Note: ** The official [mod_zip documentation](https://www.nginx.com/resources/wiki/modules/zip/) only discusses the static module addition i.e. recompiling nginx itself, but if you dig into the [source code](https://github.com/evanmiller/mod_zip), specifically, [the configure script](https://github.com/evanmiller/mod_zip/blob/5b2604b3914f87db2077f2239b8a98b66cf622af/config#L3), you can see that it handles configuration as a dynamic module i.e. add to an existing nginx installation.
 
-What follows are working code solutions to the first two, less straightforward items: build the mod_zip module and run nginx with mod_zip enabled. To tie it all together I have put together a demo application that generates the needed requests (in this case with a lightweight [FastAPI](https://fastapi.tiangolo.com/) app, because I didn't want to test this with a full Django app).
+What follows are working code solutions to the first two, less straightforward items: building the mod_zip module and running nginx with mod_zip enabled. To tie it all together I have written a demo application that generates the needed requests (in this case with a lightweight [FastAPI](https://fastapi.tiangolo.com/) app, because I didn't want to test this with a full Django app).
 
 ## The code
 
@@ -30,7 +30,7 @@ See the [example files here](https://github.com/campenr/examples/tree/main/nginx
 
 Even though we don't want to compile nginx from source, we still need the nginx source in order to build the module. The below Dockerfile does just that, and creates the module shared object that you can then add to your existing nginx installation. This docker image served my needs exactly (Ubuntu 22.04, nginx v1.22.1) but you can edit it for your own needs, or even paramaterise it for a more general solution if so inclined.
 
-**Note: ** The later example Dockerfile requires a new enough version of docker to use multi-stage builds. If this is not enabled by default for your version you can try using `DOCKER_BUILDKIT=1` to enable it. Alternatively, if you only care about the builder and not the full demo you can ignore this and just run the builder without multi-stage. 
+**Note: ** The later example Dockerfile requires a new enough version of docker to use multi-stage builds. If this is not enabled by default for your version you can try using `DOCKER_BUILDKIT=1` to enable it. Alternatively, if you only care about the builder and not the full demo you can ignore this and just run the builder without multi-stage.
 
 **Note: ** The specific flags passed to nginx's configure script were trial and error and your milage may vary. This was a result of debugging `module <name> is not binary compatible` errors that lead me to [this StackExchange answer](https://serverfault.com/a/988273), which led to me doing the opposite, which worked 🤷
 
@@ -77,11 +77,11 @@ docker run -it --rm --name mod_zip_build mod_zip_builder /bin/bash
 docker cp mod_zip_build:~/nginx/objs/ngx_http_zip_module.so .
 ```
 
-For completeness, I wrote a small  [FastAPI](https://fastapi.tiangolo.com/) application that installs the mod_zip module and has an endpoint for performing the dynamic zipping. This was because I can write the proof of concept in a single python file with it and have it still be easily readable. The core components are the following addition to our Dockerfile, a simple nginx config, a simple FastAPI app, and some files to serve up (again see the example repo for all the files).
+The demo application is a lightweight stack consisting of a single file backend application, and nginx webserver / proxy. I choose FastAPI for the demo as I could write the proof of concept in a single python file with it and have it still be easily readable. The principals will translate to any backend app. The core components of the demo are: the following addition to our Dockerfile, a simple nginx config, a simple FastAPI app, and some files to serve up (again see the example repo for all the files).
 
-**Note: ** The demo code expects you already understand how to configure nginx to proxy requests to a backend python application like Django or FastAPI, as well as how to run them with an application runner like [uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/), or in the case of this demo [uvicorn](https://www.uvicorn.org/) as per the [FastAPI getting started docs](https://fastapi.tiangolo.com/#run-it). For more information on the topic I point you to these useful tutorials: [one](https://uwsgi-docs.readthedocs.io/en/latest/tutorials/Django_and_nginx.html), [two](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-18-04).
+**Note: ** The demo code expects some understanding of how to configure nginx to proxy requests to a backend python application like Django or FastAPI, as well as how to run them with an application runner like [uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/), or in the case of this demo [uvicorn](https://www.uvicorn.org/) as per the [FastAPI getting started docs](https://fastapi.tiangolo.com/#run-it). For more information on the topic I point you to these useful tutorials: [one](https://uwsgi-docs.readthedocs.io/en/latest/tutorials/Django_and_nginx.html), [two](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-18-04).
 
-**Note: ** Because I'm using hardcoded test files I have also hardcoded the [crc](https://en.wikipedia.org/wiki/Cyclic_redundancy_check) (cyclic redundancy check) values in the response. You can [search for a real algorithm here](https://duckduckgo.com/?q=python+crc32&t=h_&ia=web). I've also hardcoded the file sizes and urls, but they're easier to reason in a real application.
+**Note: ** Because I'm using hardcoded test files I have also hardcoded the [crc](https://en.wikipedia.org/wiki/Cyclic_redundancy_check) (cyclic redundancy check) values in the response. You can [search for a real algorithm here](https://duckduckgo.com/?q=python+crc32&t=h_&ia=web). I've also hardcoded the file sizes and urls for simplicity in the demo.
 
 ```dockerfile
 FROM nginx:1.22 as runner
@@ -168,6 +168,13 @@ def build_content():
 
 ```
 
-After building the new image you can run it as above. To start the FastAPI application use: `docker exec -it --user root zip_demo venv/bin/python -m uvicorn main:app`. Hitting `localhost:8080` will serve the default nginx page, and either `localhost:8080/test1.txt` or `localhost:8080/test2.txt` will serve the individual files through nginx as normal. Hitting `localhost:8080/zip/` will proxy the request to FastAPI which then sends a response that triggers mod_zip to do it's magic and zip up the files as per our manifest content 🎉
+The following commands will build and then run the demo:
 
-A couple of final notes: In a real world application you may have more complex needs around serving the files i.e. the file urls supplied to mod_zip may need to be Django urls so you can enforce permission checks. This is less performant than using nginx servable urls directly, but still a better choice than doing it all in python as the heavy work involved shouldn't be processing the file requests it is the zip compression. Also, if your hosting setup is more complex where say, the files are served from S3, this may not be the most performant approach as you are forcing a trip to the server when normally you would just put a CDN in from of S3 and serve that content directly. In such a case the earlier option of caching the zip files (eagerly or lazily) could be a better option. Like all things the specifics depend on your exact use case.
+```bash
+docker build -t mod_zip_demo .
+docker exec -it --user root mod_zip_demo venv/bin/python -m uvicorn main:app
+```
+
+Hitting `localhost:8080` will serve the default nginx page, and either `localhost:8080/test1.txt` or `localhost:8080/test2.txt` will serve the individual files through nginx as normal. Hitting `localhost:8080/zip/` will proxy the request to FastAPI which then sends a response that triggers mod_zip to do it's magic and zip up the files as per our manifest content 🎉
+
+A couple of final notes: In a real world application you may have more complex needs around serving the files i.e. the file urls supplied to mod_zip may need to route through your application so that you can enforce permission checks. This is less performant than using nginx servable urls directly, but still a better choice than doing it all in python as the heavy work involved shouldn't be processing the requests but rather the zip compression. Also, if your hosting setup is more complex where say, the files are served from S3, this may not be the most performant approach as you are forcing a trip to the server when normally you would just put a CDN in from of S3 and serve that content directly. In such a case the earlier option of caching the zip files (eagerly or lazily) could be a better option. Like all things the specifics depend on your exact use case.
