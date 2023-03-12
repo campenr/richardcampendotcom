@@ -172,9 +172,10 @@ The following commands will build and then run the demo:
 
 ```bash
 docker build -t mod_zip_demo .
-docker exec -it --user root mod_zip_demo venv/bin/python -m uvicorn main:app
+docker run -it --rm --name zip_demo mod_zip_demo /bin/bash
+docker exec -it --user root zip_demo venv/bin/python -m uvicorn main:app
 ```
 
 Hitting `localhost:8080` will serve the default nginx page, and either `localhost:8080/test1.txt` or `localhost:8080/test2.txt` will serve the individual files through nginx as normal. Hitting `localhost:8080/zip/` will proxy the request to FastAPI which then sends a response that triggers mod_zip to do it's magic and zip up the files as per our manifest content 🎉
 
-A couple of final notes: In a real world application you may have more complex needs around serving the files i.e. the file urls supplied to mod_zip may need to route through your application so that you can enforce permission checks. This is less performant than using nginx servable urls directly, but still a better choice than doing it all in python as the heavy work involved shouldn't be processing the requests but rather the zip compression. Also, if your hosting setup is more complex where say, the files are served from S3, this may not be the most performant approach as you are forcing a trip to the server when normally you would just put a CDN in from of S3 and serve that content directly. In such a case the earlier option of caching the zip files (eagerly or lazily) could be a better option. Like all things the specifics depend on your exact use case.
+A couple of final notes: In a real world application you may have more complex needs around serving the files i.e. the file urls supplied to mod_zip may need to route through your application so that you can enforce permission checks. This is less performant than using nginx servable urls directly, but still a better choice than doing it all in python as the heavy work involved shouldn't be processing the requests but rather the zip compression. Also, if your hosting setup is more complex where say, the files are served from S3, this may not be the most performant approach as you are forcing a trip to the server when normally you would just put a CDN in from of S3 and serve that content directly. In such a case the earlier option of caching the zip files (eagerly or lazily) could be a better option. Like all things the specifics depend on your exact use case. Also, if you follow the approach taken here note than major/minor upgrades to nginx will require manually upgrading the module as well.
