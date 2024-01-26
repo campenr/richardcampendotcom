@@ -1,8 +1,0 @@
----
-ansible_python_interpreter: "/usr/bin/python3"
-
-python_version_number: 3.6
-
-flask_run_migrations: false
-
-nginx_version: 1.20.*  # Check http://nginx.org/en/download.html for stable versions
