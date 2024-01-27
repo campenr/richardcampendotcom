@@ -1,4 +1,4 @@
-FROM python:3.8-slim as backend_base
+FROM python:3.12-slim as backend_base
 
 ENV PYTHONUNBUFFERED=1 \
     POETRY_HOME=/opt/poetry \
@@ -50,7 +50,7 @@ RUN npm install
 RUN npm run build
 
 
-FROM python:3.8-slim as backend_production
+FROM python:3.12-slim as backend_production
 
 RUN groupadd --system --gid=10001 app_runner && useradd --system --uid=10002 --gid=10001 app_runner
 
