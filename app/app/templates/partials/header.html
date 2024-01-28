@@ -1,15 +1,16 @@
 <header aria-label="header">
     <nav class="flex flex-wrap lg:flex-nowrap items-end mt-8 md:mt-10 mb-20 xl:mb-32 pb-10 md:pb-18 xl:pb-20 border-b-2 border-black-muted border-opacity-50">
 
-        <h1 class="uppercase md:-mb-2 xl:-mb-3">
+        <h1 class="header-label md:-mb-2 xl:-mb-3">
             <span class="block italic font-medium">Richard</span>
             <span class="block">Campen</span>
         </h1>
 
         <ul class="ml-auto mt-8 md:mt-10 flex flex-wrap uppercase -mr-2">
-            {{ nav_link("about", "about") }}
-            {{ nav_link("software", "software") }}
-            {{ nav_link("publications", "publications") }}
+            {{ nav_link("about", "about", active_page) }}
+            {{ nav_link("software", "software", active_page) }}
+            {{ nav_link("publications", "publications", active_page) }}
+            {{ nav_link("blog_listing", "blog", active_page) }}
         </ul>
 
     </nav>

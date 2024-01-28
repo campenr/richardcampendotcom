@@ -1,0 +1,13 @@
+version: "3.4"
+
+services:
+
+  flask:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+      target: backend_development
+    volumes:
+      - ..:/app/
+    ports:
+       - '4325:4325'  # web server

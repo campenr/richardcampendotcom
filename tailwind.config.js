@@ -1,5 +1,4 @@
 module.exports = {
-  mode: 'jit',
   theme: {
     fontFamily: {
       'sans': ['Libre Franklin', 'sans-serif'],
@@ -15,7 +14,9 @@ module.exports = {
       }
     }
   },
-  purge: {
-    content: ['./app/app/**/*.html'],
-  },
+  mode: 'jit',
+  content: ['./app/app/**/*.html'],
+  safelist: [
+      'codehilite',
+  ],
 }

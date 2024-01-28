@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 args="$@"
-vagrant ssh -c "source ./venv/bin/activate && cd ./app/ && poetry $args"
+docker-compose -f docker/docker-compose.dev.yml exec flask sh -c ". /venv/bin/activate && cd app/ && LANG=C.UTF-8 poetry $args"
