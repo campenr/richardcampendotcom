@@ -6,14 +6,12 @@ authors = ["None"]
 
 [tool.poetry.dependencies]
 python = "~3.12"
-flask = "~2"
+flask = "~3"
 flask-sitemap = "~0.4"
-gunicorn = "~20"
-psycopg2-binary = "~2"
-requests = "~2"
+gunicorn = "~21"
 whitenoise = "~6"
-markdown = "^3.4.1"
-pygments = "^2.14.0"
+markdown = "~3"
+pygments = "~2"
 
 [tool.poetry.dev-dependencies]
 
