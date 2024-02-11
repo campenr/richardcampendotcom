@@ -37,7 +37,7 @@ RUN python3 -m virtualenv /venv \
     && LANG=C.UTF-8 poetry install --only main
 
 
-FROM node:14.16.1-alpine as frontend_builder
+FROM node:20.11-alpine as frontend_builder
 
 RUN apk --no-cache add autoconf automake git libtool make tiff jpeg zlib zlib-dev pkgconf nasm file gcc musl-dev
 
