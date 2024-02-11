@@ -33,7 +33,8 @@ def load_markdown_file(file: Path):
 
 @flask_app.route('/')
 def about():
-    return render_template("about.html", active_page="about")
+    html = load_content('about')
+    return render_template("about.html", about=html, active_page="about")
 
 
 @flask_app.route('/software')
