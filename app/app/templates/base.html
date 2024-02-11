@@ -41,9 +41,7 @@
             <section aria-label="bio-section" class="my-16 md:my-0">
                 {% include 'partials/info_panel.html' %}
             </section>
-{#            <section aria-label="{% block content_aria_label %}{% endblock %}" class="grid grid-cols-10">#}
             <section aria-label="{% block content_aria_label %}{% endblock %}" class="content-section">
-{#                <div class="col-start-2 col-end-10 lg:col-start-3 xl:col-end-9 2xl:col-end-8">#}
                 {% block content %}
                 {% endblock %}
             </section>

@@ -7,18 +7,20 @@
 {% block content %}
 
     <div class="block-wrapper">
-
-        <h1>Blog</h1>
-
         <div class="block-inner">
-            <a href="{{ url_for('blog_item', name='nginx-mod-zip-for-dynamic-file-zipping') }}">
-                <h2>Nginx mod_zip for dynamic file zipping</h2>
-            </a>
-            <p>
-                Why build dynamic zip files in your Django / python / any web application running behind nginx, when nginx can do the work for you! A how-to with examples.
-            </p>
-        </div>
 
+            <h1>Blog</h1>
+
+            <div class="block-inner">
+                <a href="{{ url_for('blog_item', name='nginx-mod-zip-for-dynamic-file-zipping') }}">
+                    <h2>Nginx mod_zip for dynamic file zipping</h2>
+                </a>
+                <p>
+                    Why build dynamic zip files in your Django / python / any web application running behind nginx, when nginx can do the work for you! A how-to with examples.
+                </p>
+            </div>
+
+        </div>
     </div>
 
 {% endblock %}
