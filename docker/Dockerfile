@@ -21,7 +21,7 @@ FROM backend_base as backend_development
 
 RUN python3 -m virtualenv /venv \
     && . /venv/bin/activate \
-    && LANG=C.UTF-8 poetry install
+    && LANG=C.UTF-8 poetry install --no-root
 
 # entrypoint file performs needed steps to get a running dev environment
 COPY docker/docker-entrypoint.dev.sh /
@@ -34,7 +34,7 @@ COPY  . .
 
 RUN python3 -m virtualenv /venv \
     && . /venv/bin/activate \
-    && LANG=C.UTF-8 poetry install --only main
+    && LANG=C.UTF-8 poetry install --no-root --only main
 
 
 FROM node:20.11-alpine as frontend_builder
